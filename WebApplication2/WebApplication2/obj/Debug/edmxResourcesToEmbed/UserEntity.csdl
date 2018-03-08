@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="USERTABLE">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AGE" Type="Int32" />
+    <Property Name="Enroll" Type="Int32" />
+    <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateAt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="WebApplication2201802_dbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="USERTABLE" EntityType="Self.USERTABLE" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="USERTABLE">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="Enroll" Type="int" />
+    <Property Name="CreateAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdateAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WebApplication2201802_dbModelStoreContainer">
+    <EntitySet Name="USERTABLE" EntityType="Self.USERTABLE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

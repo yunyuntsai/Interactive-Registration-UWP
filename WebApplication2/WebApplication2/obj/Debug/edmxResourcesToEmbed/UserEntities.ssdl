@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="USERTABLE">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="AGE" Type="int" />
+    <Property Name="Arrived" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateAt" Type="datetime" />
+    <Property Name="CreateAt" Type="datetime" />
+    <Property Name="TagID" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'WebApplication2201802_db.dbo.UwbTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UwbTable">
+          <Property Name="TagID" Type="bigint" />
+        </EntityType>-->
+  <EntityContainer Name="WebApplication2201802_dbModelStoreContainer">
+    <EntitySet Name="USERTABLE" EntityType="Self.USERTABLE" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
