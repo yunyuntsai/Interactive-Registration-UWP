@@ -204,21 +204,25 @@ namespace signedUWP.signedUWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "signedUWP.AboutPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "signedUWP.MainPage";
-            _typeNameTable[4] = "signedUWP.ScanPage";
-            _typeNameTable[5] = "signedUWP.UserPage";
+            _typeNameTable[4] = "signedUWP.OrderPage";
+            _typeNameTable[5] = "signedUWP.ScanPage";
+            _typeNameTable[6] = "signedUWP.UserPage";
+            _typeNameTable[7] = "Windows.UI.Xaml.Media.ImageSource";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::signedUWP.AboutPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::signedUWP.MainPage);
-            _typeTable[4] = typeof(global::signedUWP.ScanPage);
-            _typeTable[5] = typeof(global::signedUWP.UserPage);
+            _typeTable[4] = typeof(global::signedUWP.OrderPage);
+            _typeTable[5] = typeof(global::signedUWP.ScanPage);
+            _typeTable[6] = typeof(global::signedUWP.UserPage);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -255,8 +259,9 @@ namespace signedUWP.signedUWP_XamlTypeInfo
 
         private object Activate_0_AboutPage() { return new global::signedUWP.AboutPage(); }
         private object Activate_3_MainPage() { return new global::signedUWP.MainPage(); }
-        private object Activate_4_ScanPage() { return new global::signedUWP.ScanPage(); }
-        private object Activate_5_UserPage() { return new global::signedUWP.UserPage(); }
+        private object Activate_4_OrderPage() { return new global::signedUWP.OrderPage(); }
+        private object Activate_5_ScanPage() { return new global::signedUWP.ScanPage(); }
+        private object Activate_6_UserPage() { return new global::signedUWP.UserPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -290,18 +295,30 @@ namespace signedUWP.signedUWP_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  signedUWP.ScanPage
+            case 4:   //  signedUWP.OrderPage
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_ScanPage;
+                userType.Activator = Activate_4_OrderPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  signedUWP.UserPage
+            case 5:   //  signedUWP.ScanPage
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_UserPage;
+                userType.Activator = Activate_5_ScanPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
+                break;
+
+            case 6:   //  signedUWP.UserPage
+                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_UserPage;
+                userType.AddMemberName("MainImage");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Windows.UI.Xaml.Media.ImageSource
+                xamlType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
@@ -362,11 +379,31 @@ namespace signedUWP.signedUWP_XamlTypeInfo
             return foundXamlType;
         }
 
+        private object get_0_UserPage_MainImage(object instance)
+        {
+            var that = (global::signedUWP.UserPage)instance;
+            return that.MainImage;
+        }
+        private void set_0_UserPage_MainImage(object instance, object Value)
+        {
+            var that = (global::signedUWP.UserPage)instance;
+            that.MainImage = (global::Windows.UI.Xaml.Media.ImageSource)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::signedUWP.signedUWP_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "signedUWP.UserPage.MainImage":
+                userType = (global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("signedUWP.UserPage");
+                xamlMember = new global::signedUWP.signedUWP_XamlTypeInfo.XamlMember(this, "MainImage", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.Getter = get_0_UserPage_MainImage;
+                xamlMember.Setter = set_0_UserPage_MainImage;
+                break;
+            }
             return xamlMember;
         }
     }

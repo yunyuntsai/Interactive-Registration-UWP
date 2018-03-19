@@ -23,6 +23,11 @@
 					<Base64Value>[Embedded Binary Data]</Base64Value>
 				</Candidate>
 			</NamedResource>
+			<NamedResource name="OrderPage.xbf" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/OrderPage.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="ScanPage.xbf" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/ScanPage.xbf">
 				<Candidate type="EmbeddedData">
 					<Base64Value>[Embedded Binary Data]</Base64Value>
@@ -39,9 +44,209 @@
 				</Candidate>
 			</NamedResource>
 			<ResourceMapSubtree name="Assets">
+				<NamedResource name="13.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/13.png">
+					<Candidate type="Path">
+						<Value>Assets\13.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check1.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check1.png">
+					<Candidate type="Path">
+						<Value>Assets\check1.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check11.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check11.png">
+					<Candidate type="Path">
+						<Value>Assets\check11.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check111.png">
+					<Candidate type="Path">
+						<Value>Assets\check111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check1111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check1111.png">
+					<Candidate type="Path">
+						<Value>Assets\check1111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check2.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check2.png">
+					<Candidate type="Path">
+						<Value>Assets\check2.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check22.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check22.png">
+					<Candidate type="Path">
+						<Value>Assets\check22.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check3.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check3.png">
+					<Candidate type="Path">
+						<Value>Assets\check3.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="check33.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/check33.png">
+					<Candidate type="Path">
+						<Value>Assets\check33.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="checked.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/checked.png">
+					<Candidate type="Path">
+						<Value>Assets\checked.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="crrect_answer1.mp3" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/crrect_answer1.mp3">
+					<Candidate type="Path">
+						<Value>Assets\crrect_answer1.mp3</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="crrect_answer3.mp3" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/crrect_answer3.mp3">
+					<Candidate type="Path">
+						<Value>Assets\crrect_answer3.mp3</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="GreenDot.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/GreenDot.png">
+					<Candidate type="Path">
+						<Value>Assets\GreenDot.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Image1.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/Image1.png">
+					<Candidate type="Path">
+						<Value>Assets\Image1.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image11.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image11.png">
+					<Candidate type="Path">
+						<Value>Assets\image11.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image111.png">
+					<Candidate type="Path">
+						<Value>Assets\image111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image2.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image2.png">
+					<Candidate type="Path">
+						<Value>Assets\image2.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image22.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image22.png">
+					<Candidate type="Path">
+						<Value>Assets\image22.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image222.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image222.png">
+					<Candidate type="Path">
+						<Value>Assets\image222.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image3.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image3.png">
+					<Candidate type="Path">
+						<Value>Assets\image3.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image33.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image33.png">
+					<Candidate type="Path">
+						<Value>Assets\image33.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="image333.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/image333.png">
+					<Candidate type="Path">
+						<Value>Assets\image333.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT11.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT11.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT11.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT111.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT22.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT22.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT22.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT222.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT222.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT222.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT33.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT33.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT33.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="IoT333.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/IoT333.png">
+					<Candidate type="Path">
+						<Value>Assets\IoT333.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="line1.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/line1.png">
+					<Candidate type="Path">
+						<Value>Assets\line1.png</Value>
+					</Candidate>
+				</NamedResource>
 				<NamedResource name="LockScreenLogo.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/LockScreenLogo.png">
 					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
 						<Value>Assets\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num1.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num1.png">
+					<Candidate type="Path">
+						<Value>Assets\num1.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num11.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num11.png">
+					<Candidate type="Path">
+						<Value>Assets\num11.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num111.png">
+					<Candidate type="Path">
+						<Value>Assets\num111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num1111.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num1111.png">
+					<Candidate type="Path">
+						<Value>Assets\num1111.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num2.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num2.png">
+					<Candidate type="Path">
+						<Value>Assets\num2.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num22.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num22.png">
+					<Candidate type="Path">
+						<Value>Assets\num22.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num222.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num222.png">
+					<Candidate type="Path">
+						<Value>Assets\num222.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num3.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num3.png">
+					<Candidate type="Path">
+						<Value>Assets\num3.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num33.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num33.png">
+					<Candidate type="Path">
+						<Value>Assets\num33.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="num333.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/num333.png">
+					<Candidate type="Path">
+						<Value>Assets\num333.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="RedDot.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/RedDot.png">
+					<Candidate type="Path">
+						<Value>Assets\RedDot.png</Value>
 					</Candidate>
 				</NamedResource>
 				<NamedResource name="SplashScreen.png" uri="ms-resource://0aaa008d-d2af-44fb-8412-cdb7eb74b366/Files/Assets/SplashScreen.png">

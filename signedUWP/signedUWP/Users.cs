@@ -20,9 +20,9 @@ namespace signedUWP
         
         public string Arrived { get; set; }
 
-        public DateTime CreateTime { get; set; }
+        public string CreateTime { get; set; }
 
-        public DateTime UpdateTime { get; set; }
+        public string UpdateTime { get; set; }
     
         public long TagId { get; set; }
         //public decimal UnitPrice { get; set; }

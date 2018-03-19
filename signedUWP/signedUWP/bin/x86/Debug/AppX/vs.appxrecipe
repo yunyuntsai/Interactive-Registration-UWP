@@ -19,25 +19,25 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>648770C67CE78EC0D34DD62C9C7F8C14B7D77E71B9987AD30AED3CC2B7CD1D84</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>0aaa008d-d2af-44fb-8412-cdb7eb74b366_1.0.0.0_x86__9ax4dkade8z3m</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>968AE3BE8385274B8641FAA842DD809183C6EA6E041C816253DED5ECE17C0AF9</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0aaa008d-d2af-44fb-8412-cdb7eb74b366_1.0.2.0_x86__9ax4dkade8z3m</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0aaa008d-d2af-44fb-8412-cdb7eb74b366_9ax4dkade8z3m!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0aaa008d-d2af-44fb-8412-cdb7eb74b366</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=v-altsai</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>1.0.2.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-07T09:24:35.146</Modified>
+      <Modified>2018-03-19T06:04:50.558</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\signedUWP.exe">
       <PackagePath>entrypoint\signedUWP.exe</PackagePath>
-      <Modified>2018-03-07T09:24:33.638</Modified>
+      <Modified>2018-03-19T06:04:48.430</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\.nuget\packages\microsoft.azure.mobile.client\3.0.3\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -547,6 +547,42 @@
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
       <Modified>2017-05-16T08:10:06.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\13.png">
+      <PackagePath>Assets\13.png</PackagePath>
+      <Modified>2018-03-13T04:11:33.644</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check1.png">
+      <PackagePath>Assets\check1.png</PackagePath>
+      <Modified>2018-03-13T03:02:48.254</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check11.png">
+      <PackagePath>Assets\check11.png</PackagePath>
+      <Modified>2018-03-14T01:02:34.280</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check111.png">
+      <PackagePath>Assets\check111.png</PackagePath>
+      <Modified>2018-03-14T02:03:16.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check1111.png">
+      <PackagePath>Assets\check1111.png</PackagePath>
+      <Modified>2018-03-14T02:09:54.341</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check2.png">
+      <PackagePath>Assets\check2.png</PackagePath>
+      <Modified>2018-03-13T03:02:57.757</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check22.png">
+      <PackagePath>Assets\check22.png</PackagePath>
+      <Modified>2018-03-14T01:09:28.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check3.png">
+      <PackagePath>Assets\check3.png</PackagePath>
+      <Modified>2018-03-13T03:03:06.210</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check33.png">
+      <PackagePath>Assets\check33.png</PackagePath>
+      <Modified>2018-03-14T01:09:16.498</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\checked.png">
       <PackagePath>Assets\checked.png</PackagePath>
       <Modified>2018-03-07T08:05:57.675</Modified>
@@ -554,6 +590,110 @@
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\GreenDot.png">
       <PackagePath>Assets\GreenDot.png</PackagePath>
       <Modified>2018-03-06T08:19:20.448</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\Image1.png">
+      <PackagePath>Assets\Image1.png</PackagePath>
+      <Modified>2018-03-14T10:04:19.309</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image11.png">
+      <PackagePath>Assets\image11.png</PackagePath>
+      <Modified>2018-03-14T10:19:01.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image111.png">
+      <PackagePath>Assets\image111.png</PackagePath>
+      <Modified>2018-03-14T10:36:59.232</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image2.png">
+      <PackagePath>Assets\image2.png</PackagePath>
+      <Modified>2018-03-14T10:04:42.070</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image22.png">
+      <PackagePath>Assets\image22.png</PackagePath>
+      <Modified>2018-03-14T10:19:17.138</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image222.png">
+      <PackagePath>Assets\image222.png</PackagePath>
+      <Modified>2018-03-14T10:37:07.981</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image3.png">
+      <PackagePath>Assets\image3.png</PackagePath>
+      <Modified>2018-03-14T10:04:31.439</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image33.png">
+      <PackagePath>Assets\image33.png</PackagePath>
+      <Modified>2018-03-14T10:19:39.392</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image333.png">
+      <PackagePath>Assets\image333.png</PackagePath>
+      <Modified>2018-03-14T10:37:18.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT11.png">
+      <PackagePath>Assets\IoT11.png</PackagePath>
+      <Modified>2018-03-16T15:58:49.812</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT111.png">
+      <PackagePath>Assets\IoT111.png</PackagePath>
+      <Modified>2018-03-16T16:09:20.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT22.png">
+      <PackagePath>Assets\IoT22.png</PackagePath>
+      <Modified>2018-03-16T15:59:05.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT222.png">
+      <PackagePath>Assets\IoT222.png</PackagePath>
+      <Modified>2018-03-16T16:09:34.434</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT33.png">
+      <PackagePath>Assets\IoT33.png</PackagePath>
+      <Modified>2018-03-16T15:59:20.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT333.png">
+      <PackagePath>Assets\IoT333.png</PackagePath>
+      <Modified>2018-03-16T16:09:46.146</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\line1.png">
+      <PackagePath>Assets\line1.png</PackagePath>
+      <Modified>2018-03-16T17:42:59.850</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num1.png">
+      <PackagePath>Assets\num1.png</PackagePath>
+      <Modified>2018-03-13T03:01:17.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num11.png">
+      <PackagePath>Assets\num11.png</PackagePath>
+      <Modified>2018-03-13T04:06:19.535</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num111.png">
+      <PackagePath>Assets\num111.png</PackagePath>
+      <Modified>2018-03-14T00:14:37.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num1111.png">
+      <PackagePath>Assets\num1111.png</PackagePath>
+      <Modified>2018-03-14T00:26:47.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num2.png">
+      <PackagePath>Assets\num2.png</PackagePath>
+      <Modified>2018-03-13T03:01:39.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num22.png">
+      <PackagePath>Assets\num22.png</PackagePath>
+      <Modified>2018-03-13T04:06:56.767</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num222.png">
+      <PackagePath>Assets\num222.png</PackagePath>
+      <Modified>2018-03-14T00:15:29.792</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num3.png">
+      <PackagePath>Assets\num3.png</PackagePath>
+      <Modified>2018-03-13T03:01:55.678</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num33.png">
+      <PackagePath>Assets\num33.png</PackagePath>
+      <Modified>2018-03-13T04:06:40.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num333.png">
+      <PackagePath>Assets\num333.png</PackagePath>
+      <Modified>2018-03-14T00:15:18.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\RedDot.png">
       <PackagePath>Assets\RedDot.png</PackagePath>
@@ -597,13 +737,21 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-03T07:45:28.084</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\crrect_answer1.mp3">
+      <PackagePath>Assets\crrect_answer1.mp3</PackagePath>
+      <Modified>2018-03-14T06:20:19.570</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\crrect_answer3.mp3">
+      <PackagePath>Assets\crrect_answer3.mp3</PackagePath>
+      <Modified>2018-03-14T07:01:17.558</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-02-06T03:40:38.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\signedUWP.xr.xml">
       <PackagePath>signedUWP.xr.xml</PackagePath>
-      <Modified>2018-03-07T08:55:53.975</Modified>
+      <Modified>2018-03-16T16:19:03.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -620,11 +768,11 @@
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-07T09:24:34.564</Modified>
+      <Modified>2018-03-19T06:04:49.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\Core\signedUWP.exe">
       <PackagePath>signedUWP.exe</PackagePath>
-      <Modified>2018-03-07T09:24:35.137</Modified>
+      <Modified>2018-03-19T06:04:50.537</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

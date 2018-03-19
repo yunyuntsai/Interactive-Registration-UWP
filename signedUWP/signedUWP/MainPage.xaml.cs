@@ -51,10 +51,14 @@ namespace signedUWP
 
             string output = string.Format(date) + " | " + string.Format(time);
 
-            NavView.Header = "    物聯網創新中心             " + output;
+            NavView.Header = "    物聯網創新中心                                                                                             " + output;
+            
+            NavView.Visibility = Visibility.Visible;
             Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            
             currentView.TitleBar.ButtonBackgroundColor = Colors.Transparent;
             currentView.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            
         }
 
         private void CurrentView_Consolidated(ApplicationView sender, ApplicationViewConsolidatedEventArgs args)
@@ -97,12 +101,14 @@ namespace signedUWP
 
                         string output = string.Format(date) + " | " + string.Format(time);
 
-                        NavView.Header = "    物聯網創新中心             " + output;
+                        NavView.Header = "    物聯網創新中心                                " + output;
+                        
                         ContentFrame.Navigate(typeof(UserPage));
                         break;
 
                     case "Orders":
                         NavView.Header = "    物聯網創新中心";
+                        
                         ContentFrame.Navigate(typeof(OrderPage));
                         break;
 

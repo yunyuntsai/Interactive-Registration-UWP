@@ -409,11 +409,116 @@
     <AppxPackagedFile Include="C:\Users\v-altsai\.nuget\packages\xamarin.forms\2.3.4.247\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\13.png">
+      <PackagePath>Assets\13.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check1.png">
+      <PackagePath>Assets\check1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check11.png">
+      <PackagePath>Assets\check11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check111.png">
+      <PackagePath>Assets\check111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check1111.png">
+      <PackagePath>Assets\check1111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check2.png">
+      <PackagePath>Assets\check2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check22.png">
+      <PackagePath>Assets\check22.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check3.png">
+      <PackagePath>Assets\check3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\check33.png">
+      <PackagePath>Assets\check33.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\checked.png">
       <PackagePath>Assets\checked.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\GreenDot.png">
       <PackagePath>Assets\GreenDot.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\Image1.png">
+      <PackagePath>Assets\Image1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image11.png">
+      <PackagePath>Assets\image11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image111.png">
+      <PackagePath>Assets\image111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image2.png">
+      <PackagePath>Assets\image2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image22.png">
+      <PackagePath>Assets\image22.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image222.png">
+      <PackagePath>Assets\image222.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image3.png">
+      <PackagePath>Assets\image3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image33.png">
+      <PackagePath>Assets\image33.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\image333.png">
+      <PackagePath>Assets\image333.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT11.png">
+      <PackagePath>Assets\IoT11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT111.png">
+      <PackagePath>Assets\IoT111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT22.png">
+      <PackagePath>Assets\IoT22.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT222.png">
+      <PackagePath>Assets\IoT222.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT33.png">
+      <PackagePath>Assets\IoT33.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\IoT333.png">
+      <PackagePath>Assets\IoT333.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\line1.png">
+      <PackagePath>Assets\line1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num1.png">
+      <PackagePath>Assets\num1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num11.png">
+      <PackagePath>Assets\num11.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num111.png">
+      <PackagePath>Assets\num111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num1111.png">
+      <PackagePath>Assets\num1111.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num2.png">
+      <PackagePath>Assets\num2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num22.png">
+      <PackagePath>Assets\num22.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num222.png">
+      <PackagePath>Assets\num222.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num3.png">
+      <PackagePath>Assets\num3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num33.png">
+      <PackagePath>Assets\num33.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\num333.png">
+      <PackagePath>Assets\num333.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\RedDot.png">
       <PackagePath>Assets\RedDot.png</PackagePath>
@@ -447,6 +552,12 @@
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\crrect_answer1.mp3">
+      <PackagePath>Assets\crrect_answer1.mp3</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Assets\crrect_answer3.mp3">
+      <PackagePath>Assets\crrect_answer3.mp3</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

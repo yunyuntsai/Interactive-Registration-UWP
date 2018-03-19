@@ -251,3 +251,4 @@ C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\
 C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\x86\Debug\OrderPage.g.cs
 C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\x86\Debug\OrderPage.xaml
 C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\x86\Debug\OrderPage.xbf
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\bin\x86\Debug\Core\ForBundle\AppxManifest.xml

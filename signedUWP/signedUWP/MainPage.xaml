@@ -6,52 +6,54 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <SolidColorBrush x:Key="Gray1" Color="#314656" />
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-
         <NavigationView x:Name="NavView" Grid.Column="0"
                     ItemInvoked="NavView_ItemInvoked"           
                     Loaded="NavView_Loaded"
-                    Canvas.ZIndex="0">
+                    Canvas.ZIndex="0" ExpandedModeThresholdWidth="0" OpenPaneLength="40" Margin="0,0,0,0" AlwaysShowHeader="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="HomeNavItem" Content="Home" Tag="home">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE10F;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+             
                 <NavigationViewItemSeparator/>
 
             </NavigationView.MenuItems>
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,0,0,0" Background="{ThemeResource SystemControlAccentDark1AcrylicWindowAccentDark1Brush}">
+                    <Grid Margin="0,0,0,0" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="400"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                        <Grid Name="MainGrid" Grid.Row="0" Grid.Column="0" Background="{ThemeResource SystemControlAccentDark1AcrylicWindowAccentDark1Brush}">
+                            <TextBlock Style="{StaticResource TitleTextBlockStyle}"
                            FontSize="28"
                            VerticalAlignment="Center"
                            x:Name="TitleName"
                            Text="{Binding}" Foreground="White" Margin="24,0,0,0" />
-                        <CommandBar Grid.Column="1"
+                        </Grid>
+   
+                        <Grid Name="MainGrid3" Grid.Row="0" Grid.Column="2"  Background="{StaticResource Gray1}">
+                            <CommandBar Grid.Column="1"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             DefaultLabelPosition="Right"
-                            Background="{ThemeResource SystemControlAccentDark1AcrylicElementAccentDark1Brush}">
-                            <AppBarButton Label="Refresh" Icon="Refresh"/>
-                            <AppBarButton Label="Import" Icon="Import"/>
-                        </CommandBar>
+                            Background="{StaticResource Gray1}">
+                                <AppBarButton Label="Refresh" Icon="Refresh"/>
+                                <AppBarButton Label="Import" Icon="Import"/>
+                            </CommandBar>
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
             <NavigationView.PaneFooter>
                 <HyperlinkButton Name="MoreInfoButton"
-                                 Content="More"
+                                 Content="M"
                                  Tapped="MoreInfoButton_Tapped"
                                  AccessKey="M"
-                                 Margin="16,0"/>
+                                 Margin="12,0" Width="20"/>
             </NavigationView.PaneFooter>
             <Frame x:Name="ContentFrame" >
                 <Frame.ContentTransitions>

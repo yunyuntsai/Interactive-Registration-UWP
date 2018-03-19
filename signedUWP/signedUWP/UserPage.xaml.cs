@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -11,6 +12,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Media.Core;
+using Windows.Media.Playback;
+using Windows.Media.SpeechSynthesis;
+using Windows.Storage.Streams;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
@@ -18,6 +23,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 namespace signedUWP
@@ -33,24 +39,105 @@ namespace signedUWP
         public string BarcodeId = null;
         public int TotalUser = 0;
         public int ArrivedUser = 0;
+        public int Delay_Param ;
         private ImageSource mainImage;
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private MediaElement media;
+        private int counter = 1,counter3=3,counter2=1;
+
+        DispatcherTimer Timer1 = new DispatcherTimer();
+        DispatcherTimer Timer2 = new DispatcherTimer();
+        DispatcherTimer Timer3 = new DispatcherTimer();
+        DispatcherTimer Timer4 = new DispatcherTimer();
 
         public UserPage()
         {
             this.InitializeComponent();
             CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
+            Timer1.Tick += Timer_Tick;
+            Timer1.Interval = new TimeSpan(0, 0, 1);
+            Timer1.Start();
+      
         }
 
+
+        private void Timer_Tick(object sender, object e)
+        {
+            Timer.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+        }
+
+
+        private void timer1_Tick(object sender, object e)
+        {
+
+          
+            Debug.WriteLine("i counter : "+counter);
+            if (counter == 0)
+            {
+                line1.Visibility = Visibility.Visible;
+                counter = 1;
+            }
+            else 
+            {
+                counter--;
+                line1.Visibility = Visibility.Collapsed;
+            }
+          
+        }
+        private void timer2_Tick(object sender, object e)
+        {
+
+
+            Debug.WriteLine("o counter : " + counter2);
+            if (counter2 == 0)
+            {
+                line2.Visibility = Visibility.Visible;
+                counter2 = 1;
+            }
+            else
+            {
+                counter2--;
+                line2.Visibility = Visibility.Collapsed;
+            }
+
+        }
+
+
+        private void TextBox1_GetFocus(object sender, RoutedEventArgs e)
+        {
+            // Set the TexBox focus background color
+            textBox1.Background = (SolidColorBrush)Resources["Green1"];
+        }
+        private void TextBox2_GetFocus(object sender, RoutedEventArgs e)
+        {
+            // Set the TexBox focus background color
+            textBox2.Background = (SolidColorBrush)Resources["Green1"];
+        }
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            textBox1.IsEnabled = true;
+            var dateToFormat = System.DateTime.Now;
+
+            var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
+            var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("hour minute");
+
+            var date = dateFormatter.Format(dateToFormat);
+            var time = timeFormatter.Format(dateToFormat);
+
+            string output = string.Format(date) + " | " + string.Format(time);
+
             textBox2.IsEnabled = false;
+            textBox2.Visibility = Visibility.Collapsed;
             Check1.Visibility = Visibility.Collapsed;
             Check2.Visibility = Visibility.Collapsed;
+            textBox1.IsEnabled = true;
+            textBox1.Visibility = Visibility.Visible;
             textBox1.Focus(Windows.UI.Xaml.FocusState.Programmatic);
-            textBox1.Select(0, 0);
-          
+            textBox1.Background = (SolidColorBrush)Resources["Green1"];
+            TitleName.Text = "IoT Innovation Center";
+    
+            Delay_Param = 5;
+            await CountUserList();
+     
             //TextBlock11.Text = "1. 請以Barcode Reader掃描報到單您的條碼.\n2. 請隨機領取UWB Tag一張，並以NFC Reader感應.\n3. 配對開通完成.";
             if (e.Parameter is string)
             {
@@ -59,24 +146,85 @@ namespace signedUWP
         }
 
 
+        async Task<IRandomAccessStream> SynthesizeTextToSpeechAsync(string text)
+        {
+            // Windows.Storage.Streams.IRandomAccessStream
+            IRandomAccessStream stream = null;
+
+            // Windows.Media.SpeechSynthesis.SpeechSynthesizer
+            using (SpeechSynthesizer synthesizer = new SpeechSynthesizer())
+            {
+                // Windows.Media.SpeechSynthesis.SpeechSynthesisStream
+                stream = await synthesizer.SynthesizeTextToStreamAsync(text);
+            }
+
+            return (stream);
+        }
+
+
+
+        private async void button5_Click(object sender, RoutedEventArgs e)
+        {
+            Delay_Param = 5;
+            Debug.WriteLine(Delay_Param);
+            Image1.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT111.png"));
+            Image2.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT22.png"));
+            Image3.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT33.png"));
+            textBox1.Focus(FocusState.Programmatic);
+
+        }
+
+        private async void button10_Click(object sender, RoutedEventArgs e)
+        {
+            Delay_Param = 10;
+            Debug.WriteLine(Delay_Param);
+            Image2.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT222.png"));
+            Image1.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT11.png"));
+            Image3.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT33.png"));
+            textBox1.Focus(FocusState.Programmatic);
+        }
+        private async void button15_Click(object sender, RoutedEventArgs e)
+        {
+            Delay_Param = 15;
+            Debug.WriteLine(Delay_Param);
+            Image3.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT333.png"));
+            Image1.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT11.png"));
+            Image2.Source = new BitmapImage(new Uri("ms-appx:///Assets/IoT22.png"));
+            textBox1.Focus(FocusState.Programmatic);
+        }
+
+   
+
         private async void OnKeyDownHandler(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
                 EnterButton.Background = (SolidColorBrush)Resources["BlueColor"];
-                
+                textBox1.Visibility = Visibility.Collapsed;
+                TextBlock22.Visibility = Visibility.Visible;
                 BarcodeId = textBox1.Text;
-                TextBlock1.Text = textBox1.Text;
+                TextBlock22.Text = textBox1.Text;
+                Timer3.Tick += timer2_Tick;
+                Timer3.Interval = new TimeSpan(0, 0, 1);
+                Timer3.Start();
+                Timer2.Stop();
+              
                 textBox2.IsEnabled = true;
+                textBox2.Visibility = Visibility.Visible;
+                textBox2.Focus(FocusState.Programmatic);
                 EnterButton1.IsEnabled = true;
                 Check1.Visibility = Visibility.Visible;
-                textBox2.Focus(FocusState.Programmatic);
+                Num111.Visibility = Visibility.Collapsed;
+                textBox1.Visibility = Visibility.Collapsed;
+                line1.Visibility = Visibility.Collapsed;
             }
             else
             {
                 EnterButton.Background = (SolidColorBrush)Resources["LightGrey"];
-                TextBlock1.Text = textBox1.Text;
+                TextBlock22.Text = textBox1.Text;
                 Check1.Visibility = Visibility.Collapsed;
+                textBox1.Visibility = Visibility.Visible;
+                TextBlock22.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -86,25 +234,106 @@ namespace signedUWP
             {
                 EnterButton1.Background = (SolidColorBrush)Resources["BlueColor"];
                 ScanTagId = textBox2.Text;
-                TextBlock2.Text = ScanTagId;
+                //TextBlock2.Text = ScanTagId;
                 Check2.Visibility = Visibility.Visible;
+                Num222.Visibility = Visibility.Collapsed;
+                textBox2.Visibility = Visibility.Collapsed;
                 await PostAsync(BarcodeId, ScanTagId);
                 await GetUsersDetailAsync(BarcodeId);
-               
+                await CountUserList();
+                Timer3.Stop();
             }
             else
             {
                 EnterButton1.Background = (SolidColorBrush)Resources["LightGrey"];
-                TextBlock1.Text = textBox1.Text;
+                //TextBlock1.Text = textBox1.Text;
                 Check2.Visibility = Visibility.Collapsed;
             }
         }
-        private void Clear_Click(object sender, RoutedEventArgs e)
+
+
+        private async Task CountUserList()
         {
-       
-        }
-        private void ClearAll_Click(object sender, RoutedEventArgs e)
-        {
+
+            //Create an HTTP client object
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            String baseAPIUrl = "http://webapplication2201802.azurewebsites.net/";
+
+   
+            ArrivedUser = 0;
+            TotalUser = 0;
+
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                Debug.WriteLine("Connect Http Client");
+                client.BaseAddress = new Uri(baseAPIUrl);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync(baseAPIUrl + "api/Users/");
+                Debug.WriteLine(response);
+                string httpResponseBody = "";
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Response Success!!!");
+                    httpResponseBody = await response.Content.ReadAsStringAsync();
+
+                    Users user = new Users();
+                    UserList u = DataHelper.GetUsers(httpResponseBody);
+                    UserList nu = new UserList();
+                    TotalUser = u.Count();
+                    for (int i = 0; i < u.Count; i++)
+                    {
+                        if (u[i].Arrived == "Yes")
+                        {
+
+                            //int hour = u[i].UpdateTime.Hour;
+                            //int minute = u[i].UpdateTime.Minute;
+
+                            //int newtime = int.Parse(hour.ToString() + ":" + hour.ToString());             
+                            string time1 = u[i].UpdateTime.Substring(11, 5);
+                            //Debug.WriteLine(u[i].UpdateTime.Substring(11,5));
+
+                            u[i].UpdateTime = time1;
+                            Debug.WriteLine(u[i].UpdateTime);
+                            ArrivedUser += 1;
+                            nu.Add(u[i]);
+                        }
+                    }
+                    TextBlock5.Text = TotalUser.ToString();
+                    TextBlock6.Text = ArrivedUser.ToString();
+                    InventoryList.ItemsSource = nu;
+                    //httpResponseBody.Replace("[", "").Replace("]", "");
+                    Debug.WriteLine(httpResponseBody);
+                }
+            }
+            Debug.WriteLine("Delay : " + Delay_Param);
+            await Task.Delay(Delay_Param*1000);
+            Timer2.Tick += timer1_Tick;
+            Timer2.Interval = new TimeSpan(0, 0, 1);
+            Timer2.Start();
+            Check1.Visibility = Visibility.Collapsed;
+            Check2.Visibility = Visibility.Collapsed;
+            Check3.Visibility = Visibility.Collapsed;
+            Num111.Visibility = Visibility.Visible;
+            Num222.Visibility = Visibility.Visible;
+            line2.Visibility = Visibility.Collapsed;
+            TextBlock1.Text = ""; TextBlock2.Text = "";            
+            textBox1.Text = ""; textBox2.Text = "";
+            textBox2.IsEnabled = false;
+            textBox1.Visibility = Visibility.Visible;
+            textBox2.Visibility = Visibility.Collapsed;
+            textBox1.Focus(FocusState.Programmatic);
+            EnterButton1.IsEnabled = false;
+            EnterButton1.Background = (SolidColorBrush)Resources["LightGrey"];
+            EnterButton.Background = (SolidColorBrush)Resources["LightGrey"];
+            Num333.Visibility = Visibility.Visible;
+            TextBlock10.Visibility = Visibility.Visible;
+            TextBlock30.Visibility = Visibility.Visible;
+            TextBlock22.Text = ""; 
+            TextBlock3.Text = "";
+            TextBlock24.Text = "";
+            TextBlock26.Text = "";
+
 
         }
         private async Task GetUsersDetailAsync(String id)
@@ -143,16 +372,26 @@ namespace signedUWP
                         JProperty propTime = dyn.Properties().FirstOrDefault(i => i.Name == "UpdateTime");
                         if ( propName != null)
                         {
-                            
+                            mediaPlayer = new MediaPlayer();
+                            mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/crrect_answer3.mp3"));
+                            mediaPlayer.Play();
                             string name = propName.Value.ToString();
-                            TextBlock3.Text = "Hello, " + name + " ! Nice to meet you\n Welcome to IoT center.";
+                            TextBlock3.Text = name;
+                            TextBlock26.Text = "Welcome!"; 
+                            TextBlock24.Text = "Enroll Succeed!" ;
+                            TextBlock10.Visibility = Visibility.Collapsed;
+                            TextBlock30.Visibility = Visibility.Collapsed;
+                            Num333.Visibility = Visibility.Collapsed;
+                            Check3.Visibility = Visibility.Visible;
+
+
                             //int age = int.Parse(propTime.Value.ToString());
                             //int en = Int16.Parse(propEnroll.Value.ToString());
                             //Debug.WriteLine(en);
                             //TextBlock6.Text = "已簽到";
                             //TextBlock4.Text = propName.Value.ToString();
                             //TextBlock5.Text = propTime.Value.ToString();
-                            
+
                         }
                     }
                     catch(Exception e)
@@ -268,6 +507,55 @@ namespace signedUWP
             }*/
            // toppingsList.Text = selectedToppingsText;
         }
+
+        #region Drag and drop handling code       
+        private void InventoryList_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = DataPackageOperation.Copy;
+        }
+
+        private void InventoryList_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            if (InventoryList.SelectedItem != null)
+            {
+                var users = (Users)InventoryList.SelectedItem;
+                e.Data.SetText(users.Id.ToString());
+                //e.Data.RequestedOperation = DataPackageOperation.Copy;
+                Debug.WriteLine(users.Name.ToString());
+
+            }
+        }
+        public Users old_users;
+
+
+        private void InventoryList_ClickItem(object sender, ItemClickEventArgs e)
+        {
+
+            if (InventoryList.SelectedItem != null)
+            {
+
+                var users = (Users)InventoryList.SelectedItem;
+                // Get the list view clicked item text
+                if (users != old_users)
+                {
+                    string clickedItemText = "Hi " + users.Name + " \n Please scan your Tag!";
+
+                    // Initialize a new message dialog
+                    MessageDialog dialog = new MessageDialog("Clicked : " + clickedItemText);
+
+                    // Finally, display the clicked item text on dialog
+                    //ScanningWindow(users);
+
+                    old_users = users;
+                }
+
+
+            }
+        }
+
+        #endregion
+
+
         public async Task ScanningWindow(Users u)
         {
             var currentAV = ApplicationView.GetForCurrentView();
@@ -292,6 +580,19 @@ namespace signedUWP
                             });
         }
 
+        private void TextBlock8_SelectionChanged(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void TextBlock7_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBlock3_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

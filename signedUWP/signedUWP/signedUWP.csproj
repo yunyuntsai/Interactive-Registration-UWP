@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>signedUWP_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -127,8 +127,45 @@
     <None Include="signedUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\13.png" />
+    <Content Include="Assets\check1.png" />
+    <Content Include="Assets\check11.png" />
+    <Content Include="Assets\check111.png" />
+    <Content Include="Assets\check1111.png" />
+    <Content Include="Assets\check2.png" />
+    <Content Include="Assets\check22.png" />
+    <Content Include="Assets\check3.png" />
+    <Content Include="Assets\check33.png" />
     <Content Include="Assets\checked.png" />
+    <Content Include="Assets\crrect_answer1.mp3" />
+    <Content Include="Assets\crrect_answer3.mp3" />
     <Content Include="Assets\GreenDot.png" />
+    <Content Include="Assets\Image1.png" />
+    <Content Include="Assets\image11.png" />
+    <Content Include="Assets\image111.png" />
+    <Content Include="Assets\image2.png" />
+    <Content Include="Assets\image22.png" />
+    <Content Include="Assets\image222.png" />
+    <Content Include="Assets\image3.png" />
+    <Content Include="Assets\image33.png" />
+    <Content Include="Assets\image333.png" />
+    <Content Include="Assets\IoT11.png" />
+    <Content Include="Assets\IoT111.png" />
+    <Content Include="Assets\IoT22.png" />
+    <Content Include="Assets\IoT222.png" />
+    <Content Include="Assets\IoT33.png" />
+    <Content Include="Assets\IoT333.png" />
+    <Content Include="Assets\line1.png" />
+    <Content Include="Assets\num1.png" />
+    <Content Include="Assets\num11.png" />
+    <Content Include="Assets\num111.png" />
+    <Content Include="Assets\num1111.png" />
+    <Content Include="Assets\num2.png" />
+    <Content Include="Assets\num22.png" />
+    <Content Include="Assets\num222.png" />
+    <Content Include="Assets\num3.png" />
+    <Content Include="Assets\num33.png" />
+    <Content Include="Assets\num333.png" />
     <Content Include="Assets\RedDot.png" />
     <Content Include="Assets\WIN13.png" />
     <Content Include="Properties\Default.rd.xml">
