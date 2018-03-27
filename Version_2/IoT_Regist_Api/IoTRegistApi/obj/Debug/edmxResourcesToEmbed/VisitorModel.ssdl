@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tag_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TagName" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+    <Property Name="NfcId" Type="bigint" />
+    <Property Name="TagId" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Visitor_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="VisitorId" Type="varchar" MaxLength="7" StoreGeneratedPattern="Computed" />
+    <Property Name="VisitorName" Type="nvarchar" MaxLength="200" />
+    <Property Name="VisitorCompany" Type="nvarchar" MaxLength="200" />
+    <Property Name="Arrived" Type="varchar" MaxLength="10" />
+    <Property Name="VisitTime" Type="datetime" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="NFCid" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="WebApplication2201802_dbModelStoreContainer">
+    <EntitySet Name="Tag_Profile" EntityType="Self.Tag_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitor_Profile" EntityType="Self.Visitor_Profile" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

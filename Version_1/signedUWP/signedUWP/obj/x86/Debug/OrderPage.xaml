@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="signedUWP.OrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:signedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="150" />
+        </Grid.RowDefinitions>
+        <Grid x:ConnectionId='1' Name="MainGrid2" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <ListView x:ConnectionId='6' Name="InventoryList"  Grid.Row="1" Grid.Column="1"        
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.IsVerticalRailEnabled="True"
+                      ScrollViewer.VerticalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.IsHorizontalRailEnabled="True"
+                      Margin="0,0,0,40"
+                      CanDragItems="True"
+                                                                         
+                                                       
+                      AllowDrop ="True"
+                      IsItemClickEnabled="True"                                     SelectionMode="Single">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"  Margin="0,30,0,0">
+                            <TextBlock Text="Id" Width="140" FontSize="20" Foreground="DarkRed"  />
+                            <TextBlock Text="Name" Width="140" FontSize="20" Foreground="DarkRed"  />
+                            <TextBlock Text="Arrived State" Width="170" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="Time" Width="160" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="Tag Serial no." Width="160" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="Tag id" Width="140" FontSize="20" Foreground="DarkRed" />
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate                         >
+                        <StackPanel x:ConnectionId='7' Orientation="Horizontal" >
+
+                            <TextBlock x:ConnectionId='8' Name="UserId"
+                                                          
+                                        Width="120" />
+                            <TextBlock x:ConnectionId='9' Name="UserName"
+                                                            
+                                        Width="140" />
+                            <TextBlock x:ConnectionId='10'  Name="Arrived"
+                                                                          
+                                        Width="160" />
+
+                            <TextBlock x:ConnectionId='11'  Name="Updatatime"
+                                                                  
+                                       Width="180" />
+                            <TextBlock x:ConnectionId='12'  Name="TagSerialnum"
+                                                                    
+                                        Width="150" />
+                            <TextBlock x:ConnectionId='13'  Name="TagId"
+                                                             
+                                        Width="150" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:ConnectionId='2' Name="MainGrid3" Grid.Column="0" Grid.Row="1"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid x:ConnectionId='3' Grid.Column="1" AllowDrop="True"                                             Background="LightBlue" Width="200" Height="50" >
+                <TextBlock Text="Clear State" TextAlignment="Center" Margin="0,15,0,0"/>
+            </Grid>
+            <Grid x:ConnectionId='4' Grid.Column="2" AllowDrop="True"                                              Background="LightGray" Width="200" Height="50" >
+                <TextBlock Text="Delete" TextAlignment="Center"  Margin="0,15,0,0"/>
+            </Grid>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
+                <Button x:ConnectionId='5' Content="Delete All"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                       Width="200" Height="50"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
+

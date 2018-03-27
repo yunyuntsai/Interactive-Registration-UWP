@@ -1,0 +1,318 @@
+﻿<Page
+    x:Class="signedUWP.UserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:signedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xaml="http://xamarin.com/schemas/2014/forms"
+    mc:Ignorable="d" >
+    <Page.Resources>
+        <SolidColorBrush x:Key="BlueColor" Color="#02599F" />
+        <SolidColorBrush x:Key="Blue" Color="#0078D7" />
+        <SolidColorBrush x:Key="LightGrey" Color="LightGray" />
+        <SolidColorBrush x:Key="Grey1" Color="#314656" />
+        <SolidColorBrush x:Key="White1" Color="#F2F2F2" />
+        <SolidColorBrush x:Key="Grey3" Color="#AFB0B0" />
+        <SolidColorBrush x:Key="Green1" Color="#00A3AD" />
+        <Style  x:Key="ButtontopStyle1"
+            TargetType="Button">
+                <Setter Property="Foreground"
+                Value="#e6e6e6" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0"
+                                                        To="#AFB0B0"
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                                                        Storyboard.TargetName="Button1" />
+                                            <ColorAnimation Duration="0"
+                                                        To="#AFB0B0"
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                                                        Storyboard.TargetName="Button11" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0"
+                                                        To="#e6e6e6"
+                                                        Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                                                        Storyboard.TargetName="Button1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Rectangle x:Name="Button1"
+                                           Stroke="Transparent"
+                                           Fill="Transparent"
+                                           Margin="0"
+                                           Width="auto" />
+                                    <ContentPresenter x:Name="Content11"
+                                                  Background="Transparent"
+                                                  Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
+                                <Rectangle x:Name="Button11"
+                                       Stroke="Transparent"
+                                       Fill="Transparent"
+                                       Margin="0"
+                                       Grid.Column="1"
+                                       Width="5" />
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+  
+
+    <Grid>
+    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="MainGrid" Grid.Row="0" Grid.Column="0" Background="{ThemeResource SystemControlAccentDark1AcrylicWindowAccentDark1Brush}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="8" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Name="Grid0" Grid.Row="0" Grid.Column="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Grid.Column="1" FontSize="28" VerticalAlignment="Center" x:Name="TitleName" Text="" Foreground="White" Margin="24,0,0,0"  />
+               
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Grid.Column="2" FontSize="28" VerticalAlignment="Center" x:Name="Timer" Text="" Foreground="White" Margin="24,0,0,0"  HorizontalAlignment="Right" Width="300" />
+                    <Border Grid.Column="1" Grid.Row="0" BorderBrush="White" BorderThickness="0 0 0 3">
+                </Border>
+                <Border Grid.Column="2" Grid.Row="0" BorderBrush="White" BorderThickness="0 0 0 3">
+                </Border>
+              
+            </Grid>
+
+            <Grid Name="Grid1" Grid.Row="1" Grid.Column="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="" 
+                       Grid.Row="1" Grid.Column="1" PlaceholderText="Choose date" HorizontalAlignment="Right" Visibility="Collapsed"/>
+                <TextBlock Name="TextBlock9"  Grid.Column="1" Text="IoT Jumpstart Workshop" FontWeight="Bold" Foreground="White" FontSize="50" Width="800" Height="100" VerticalAlignment="Center" TextAlignment="Center" Margin= "0,0,0,0"/>
+            </Grid>
+
+            <Grid Name="Grid3" Grid.Row="3" Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="15" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="390" />
+                </Grid.ColumnDefinitions>
+                <Grid Name="Grid31" Grid.Row="1"  Grid.Column="1" Background="{StaticResource White1}" Margin="0,0,60,0">
+                    <TextBlock Name="TextBlock10"  Grid.Row="1" Grid.Column="1" Text=" Experience" FontWeight="SemiBold" Foreground="Black" FontSize="40" Width="450" Height="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Margin="0,30,50,0"/>
+                    <TextBlock Name="TextBlock26" Text=""  Grid.Row="1" Grid.Column="1"  FontSize="45" Width="250"  Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,70,0" Foreground="Black" TextAlignment="Left" FontWeight="Normal"  />
+                </Grid>
+                <Grid Name="Grid32" Grid.Row="1"  Grid.Column="0" Background="{StaticResource White1}" Margin="60,0,0,0">
+                    <TextBlock Name="TextBlock30"  Grid.Row="1" Grid.Column="0" Text="Interactive Registration" FontWeight="SemiBold" Foreground="Black" FontSize="40" Width="550" Height="100" VerticalAlignment="Center" TextAlignment="Left" Margin="60,30,10,0"/>
+                    <TextBlock Name="TextBlock3" Text="" Grid.Row="1" Grid.Column="0"  FontSize="45" Width="400"  Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,30,10,0" Foreground="Black" FontWeight="Bold" TextAlignment="Center" SelectionChanged="TextBlock3_SelectionChanged"/>
+                </Grid>
+            </Grid>
+
+            <Grid Name="Grid4" Grid.Column="0" Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="Grid5" Grid.Column="1" Grid.Row="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    
+                    <Image  Name ="Num111" Source="Assets/num1111.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="45,0,0,0" Visibility="Visible"/>
+                    <Image  Name ="Check1" Source="Assets/check1111.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="45,0,0,0" Visibility="Visible"/>
+                    <Image  Name ="line1" Source="Assets/line1.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="45,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="TextBlock22" Text="" Grid.Row="1" Grid.Column="0"  FontSize="20" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Right" Foreground="White" Margin="160,120,0,0"/>
+                    <TextBlock Name="TextBlock1" Text=" " Grid.Row="1" Grid.Column="0"  FontSize="30" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="0,200,0,0"/>
+                    <TextBox  Name="textBox1" Width="180"  Height="10"  Grid.Row="1" Grid.Column="0" TabIndex="0" Header="" PlaceholderText="Your Regist No."  Margin="30,160,0,0" FontSize="12"  KeyDown="OnKeyDownHandler"  Foreground="Black"  AllowFocusOnInteraction="True"  IsEnabled="True" BorderBrush="{StaticResource Green1}" Background="{StaticResource Green1}" GotFocus="TextBox1_GetFocus" />
+                    <Button x:Name="EnterButton" Content="Enter" FontSize="20"   Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100"  Height="40"  Margin="0,0,30,0" Visibility="Collapsed"></Button>
+                </Grid>
+                <Grid Name="Grid6" Grid.Column="2" Grid.Row="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="6" />
+                    </Grid.RowDefinitions>
+                   
+                    <Image  Name ="Num222" Source="Assets/num222.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,0,0" Visibility="Visible"/>
+                    <Image Name ="Check2" Source="Assets/check22.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,0,0" Visibility="Collapsed"/>
+                    <Image Name ="line2" Source="Assets/line1.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="TextBlock23" Text="" Grid.Row="1" Grid.Column="0"  FontSize="30" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Margin="0,120,0,0"/>
+                    <TextBlock Name="TextBlock2" Text=" " Grid.Row="1" Grid.Column="0"  FontSize="30" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="0,200,0,0"/>
+                    <TextBox  Name="textBox2" Width="130"  Height="10"  Grid.Row="1" Grid.Column="0" Header="" PlaceholderText="Your Tag ID" FontSize="12"  Margin="0,160,0,0" KeyDown="OnKeyDownHandler1" AllowFocusOnInteraction="True" Foreground="Black"  IsEnabled="False" Visibility="Visible" BorderBrush="{StaticResource Green1}" Background="{StaticResource Green1}" GotFocus="TextBox1_GetFocus" />
+                    <Button x:Name="EnterButton1" Content="Enter" FontSize="20"   Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="100"  Height="40"  IsEnabled="False" Margin="0,30,30,0" Visibility="Collapsed"></Button>
+                </Grid>
+
+                <Grid Name="Grid7" Grid.Column="3" Grid.Row="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Image  Name ="Num333" Source="Assets/num333.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,25,0" Visibility="Visible"/>
+                    <Image  Name ="Check3" Source="Assets/check33.png"  Grid.Row="1" Grid.Column="0" Width="250" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,25,0" Visibility="Collapsed"/>
+                    <TextBlock Name="TextBlock24" Text="" Grid.Row="1" Grid.Column="0"  FontSize="20" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold"  Foreground="Black" Margin="0,150,0,0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Name="MainGrid2" Grid.Row="0" Grid.Column="1" Background="{StaticResource Grey1}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid Name="Grid9" Grid.Row="1" Grid.Column="1" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock Name="TextBlock8" Text="Arrived" Grid.Row="0" Grid.Column="0"  FontSize="30" Width="150"  Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"  Foreground="White" FontStyle="Normal" FontWeight="Bold" SelectionChanged="TextBlock8_SelectionChanged"/>
+                <Grid Background="White" Grid.Column="0" Grid.Row="1">
+                    <TextBlock Name="TextBlock6" Text="2"  FontSize="45" Width="50"  Height="60" HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="Black" Margin="0,0,30,10" />
+                </Grid>
+                <TextBlock Name="TextBlock7" Text=" Total  " Grid.Row="2" Grid.Column="0"  FontSize="30" Width="150"  Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="White" FontStyle="Normal" FontWeight="Bold" SelectionChanged="TextBlock7_SelectionChanged"/>
+                <Grid Background="White" Grid.Column="0" Grid.Row="3">
+                    <TextBlock Name="TextBlock5" Text="8" FontSize="45" Width="50"  Height="60" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Black" Margin="0,0,30,10"/>
+                </Grid>
+            </Grid>
+
+
+
+            <Grid Name="Grid11" Grid.Row="3" Grid.Column="1"  Margin="0,0,0,0" Opacity="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Name="TextBlock25" Text="- Enroll List -" Grid.Row="0" Grid.Column="0" FontSize="25" Width="240"  Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="0,0,0,0"   Foreground="White" FontStyle="Normal" FontWeight="Bold" SelectionChanged="TextBlock8_SelectionChanged" />
+                <ListView Name="InventoryList"           
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.IsVerticalRailEnabled="True"
+                      ScrollViewer.VerticalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollMode="Enabled"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.IsHorizontalRailEnabled="True"
+                      Margin="0,0,0,0"
+                      CanDragItems="True"
+                      DragItemsStarting="InventoryList_DragItemsStarting"
+                      DragOver="InventoryList_DragOver" Grid.Row="1"
+                      IsItemClickEnabled="True" ItemClick="InventoryList_ClickItem" SelectionMode="Single" >
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Padding="0"  Margin="0,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Name" Style="{ThemeResource CaptionTextBlockStyle}"  TextAlignment="Center"  FontSize="15" FontWeight="SemiBold" Foreground="White" Width="60" Height="40"/>
+                                <TextBlock Grid.Column="1" Text="Check-In" Style="{ThemeResource CaptionTextBlockStyle}"  TextAlignment="Center" FontSize="15" FontWeight="SemiBold" Foreground="White" />
+                                <TextBlock Grid.Column="2" Text="Tag-Id" Style="{ThemeResource CaptionTextBlockStyle}" TextAlignment="Center"  FontSize="15" FontWeight="SemiBold" Foreground="White"  />
+                            </Grid>
+                          
+
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Users">
+                            <Grid Height="45" AutomationProperties.Name="{x:Bind Name}"  Margin="0,0,0,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Height="32" Width="32" VerticalAlignment="Center">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Placeholder.png"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+
+                                <TextBlock Grid.Column="0" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="{x:Bind Name}"   TextAlignment="Center" Foreground="White"/>
+                                
+                                <TextBlock Grid.Column="1" Name="timeblock" VerticalAlignment="Center" Text="{x:Bind UpdateTime}" TextAlignment="Center" Foreground="White"/>
+
+                                <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind TagSerialnum}"  TextAlignment="Center" Foreground="White"/>
+                                <Border BorderBrush="white"  HorizontalAlignment="Stretch"  BorderThickness="1,1,1,1"  Grid.Column="0">
+                                </Border>
+                                <Border BorderBrush="white"  HorizontalAlignment="Stretch"  BorderThickness="1,1,1,1"  Grid.Column="1">
+                                </Border>
+                                <Border BorderBrush="white"  HorizontalAlignment="Stretch"  BorderThickness="1,1,1,1"  Grid.Column="2">
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid >
+            <Grid Name="Grid28" Grid.Row="4" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="35" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Button Name="button5" Grid.Column="1" FontSize="22" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="{StaticResource Grey1}" Click="button5_Click"  Padding="0" BorderThickness="0" Margin="0,0,0,0">
+                    <Image  x:Name="Image1" Source="Assets/IoT11.png"  Stretch="Fill" Width="40" Height="50" Margin="0,5,0,0"/>
+                </Button>
+                <Button Name="button10" Grid.Column="2" FontSize="14" Foreground="White" Background="{StaticResource Grey1}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="button10_Click"  Padding="0" BorderThickness="0">
+                    <Image  x:Name="Image2" Source="Assets/IoT22.png" Stretch="Fill" Width="40" Height="50" Margin="0,5,0,0"/>
+                </Button>
+                <Button Name="button15" Grid.Column="3"  FontSize="14"  Foreground="White" Background="{StaticResource Grey1}" Click="button15_Click"  Padding="0" BorderThickness="0" Margin="0,0,0,0" >
+                    <Image  x:Name="Image3" Source="Assets/IoT33.png" Stretch="Fill" Width="40" Height="50" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+        
+</Page>
