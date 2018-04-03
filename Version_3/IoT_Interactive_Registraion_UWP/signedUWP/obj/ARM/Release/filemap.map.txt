@@ -1,0 +1,20 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"scale-200"
+"ResourceDimensions"		"language-en-us"
+
+[Files]
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\filemap.pri"			"resources.pri"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\signedUWP.exe"			"signedUWP.exe"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\signedUWP.dll"			"signedUWP.dll"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\clrcompression.dll"			"clrcompression.dll"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\_Resources\index.txt"			"_Resources\index.txt"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\_Resources\1.rsrc"			"_Resources\1.rsrc"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\_Resources\0.rsrc"			"_Resources\0.rsrc"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\WIN13.png"			"Assets\WIN13.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\Wide310x150Logo.scale-200.png"			"Assets\Wide310x150Logo.scale-200.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\StoreLogo.png"			"Assets\StoreLogo.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"			"Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\Square44x44Logo.scale-200.png"			"Assets\Square44x44Logo.scale-200.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\Square150x150Logo.scale-200.png"			"Assets\Square150x150Logo.scale-200.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\SplashScreen.scale-200.png"			"Assets\SplashScreen.scale-200.png"
+"C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\signedUWP\signedUWP\obj\ARM\Release\PackageLayout\Assets\LockScreenLogo.scale-200.png"			"Assets\LockScreenLogo.scale-200.png"
