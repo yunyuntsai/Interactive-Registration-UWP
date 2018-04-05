@@ -1,16 +1,20 @@
 # Digital-Signature---UWP
 
 
-![alt text](https://user-images.githubusercontent.com/20013955/38233535-6459248c-374d-11e8-9396-4e5a9b8d3444.png)
+![alt text](https://user-images.githubusercontent.com/20013955/38377298-303aa5a4-392d-11e8-8192-29b1b57e07ae.png)
 
+# Verify API
 
+![alt text](https://user-images.githubusercontent.com/20013955/38377252-104ae86c-392d-11e8-9621-9e6cfd96744c.png)
 
-![alt text](https://user-images.githubusercontent.com/20013955/38234115-6f6d4f86-374f-11e8-9c48-78f33daf65f5.png)
+# Database Info.
 
-
-
-![alt text](https://user-images.githubusercontent.com/20013955/38233704-0a9f1ed2-374e-11e8-86be-b096fea426ba.png)
+![alt text](https://user-images.githubusercontent.com/20013955/38377269-1c34c9c2-392d-11e8-9a0c-bd75fd4abb17.png)
 
 # Demo Picture
 
 ![alt text](https://user-images.githubusercontent.com/20013955/38376718-d58de7fc-392b-11e8-9137-d8e39670b997.png)
+
+![alt text] (https://user-images.githubusercontent.com/20013955/38376811-0aafad08-392c-11e8-9c8e-10b63ceeae10.png)
+
+![alt text] (https://user-images.githubusercontent.com/20013955/38376843-1b4c24d4-392c-11e8-9753-784b9f0f3c30.png)
