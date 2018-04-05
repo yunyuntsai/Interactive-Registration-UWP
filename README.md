@@ -1,6 +1,7 @@
 # Digital-Signature---UWP
 
 > Integrate registration and indoor tracking in microsoft's office leveraging Azure SQL Database and Web services.
+> Here is the part of registration app.
 
 ## Flow & Structure
 ![alt text](https://user-images.githubusercontent.com/20013955/38377298-303aa5a4-392d-11e8-8192-29b1b57e07ae.png)
