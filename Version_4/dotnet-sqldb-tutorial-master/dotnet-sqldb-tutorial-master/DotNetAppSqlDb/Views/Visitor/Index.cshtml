@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.PhotoModel.DetailModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Visit</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayName("Visitor Photo")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <img src="@Url.Content(item.PhotoUrl)" style="height:200px;width:200px;" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.VisitorId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.VisitorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.VisitorId })
+        </td>
+    </tr>
+}
+
+</table>

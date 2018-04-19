@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebApplication2201802_dbModelStoreContainer" CdmEntityContainer="WebApplication2201802_dbEntities1">
+    <EntitySetMapping Name="Tag_Profile">
+      <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Tag_Profile">
+        <MappingFragment StoreEntitySet="Tag_Profile">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+          <ScalarProperty Name="NfcId" ColumnName="NfcId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitor_Photo">
+      <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Visitor_Photo">
+        <MappingFragment StoreEntitySet="Visitor_Photo">
+          <ScalarProperty Name="PhotoId" ColumnName="PhotoId" />
+          <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+          <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+          <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitor_Profile">
+      <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Visitor_Profile">
+        <MappingFragment StoreEntitySet="Visitor_Profile">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+          <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+          <ScalarProperty Name="VisitorCompany" ColumnName="VisitorCompany" />
+          <ScalarProperty Name="Arrived" ColumnName="Arrived" />
+          <ScalarProperty Name="VisitTime" ColumnName="VisitTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="NFCid" ColumnName="NFCid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

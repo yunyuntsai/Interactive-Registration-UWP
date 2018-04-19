@@ -1,0 +1,112 @@
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\ApplicationInsights.config
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\IoTRegistApi.dll.config
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\IoTRegistApi.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\IoTRegistApi.pdb
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Antlr3.Runtime.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\EntityFramework.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\EntityFramework.SqlServer.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.Web.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Newtonsoft.Json.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Swashbuckle.Core.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Net.Http.Formatting.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Helpers.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Http.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Http.WebHost.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Mvc.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Optimization.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Razor.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\WebActivatorEx.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\WebGrease.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Antlr3.Runtime.pdb
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\EntityFramework.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\EntityFramework.SqlServer.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Helpers.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Mvc.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Optimization.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Razor.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Microsoft.AI.Web.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\Newtonsoft.Json.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Net.Http.Formatting.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Http.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\bin\System.Web.Http.WebHost.xml
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\obj\Debug\IoTRegistApi.csprojResolveAssemblyReference.cache
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\obj\Debug\IoTRegistApi.csproj.CoreCompileInputs.cache
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\obj\Debug\IoTRegistApi.dll
+C:\Users\v-altsai\Documents\Visual Studio 2017\Projects\IoTRegistApi\IoTRegistApi\obj\Debug\IoTRegistApi.pdb
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Debug\IoTRegistApi.csprojResolveAssemblyReference.cache
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Debug\IoTRegistApi.csproj.CoreCompileInputs.cache
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\ApplicationInsights.config
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\IoTRegistApi.dll.config
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\IoTRegistApi.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\IoTRegistApi.pdb
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Antlr3.Runtime.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\EntityFramework.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\EntityFramework.SqlServer.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.Web.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.ApplicationInsights.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Newtonsoft.Json.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Swashbuckle.Core.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Net.Http.Formatting.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Helpers.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Http.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Http.WebHost.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Mvc.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Optimization.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Razor.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.Deployment.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.Razor.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\WebActivatorEx.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\WebGrease.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Antlr3.Runtime.pdb
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\EntityFramework.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\EntityFramework.SqlServer.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Helpers.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Mvc.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Optimization.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Razor.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.Deployment.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.WebPages.Razor.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.ApplicationInsights.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Microsoft.AI.Web.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\Newtonsoft.Json.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Net.Http.Formatting.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Http.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\bin\System.Web.Http.WebHost.xml
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Debug\IoTRegistApi.dll
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Debug\IoTRegistApi.pdb

@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>TW-6421351-187</Machine>
+    <WindowsUser>v-altsai</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>0aaa008d-d2af-44fb-8412-cdb7eb74b366</PackageIdentityName>
+    <PackageIdentityPublisher>CN=v-altsai</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\obj\x86\Release\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\AppX</LayoutDir>
+    <RegisteredManifestChecksum>7540F6D6997FDCCA7A6DD71ED5ECB2F862913DF43B79D4B32F912CA88DA2433C</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0aaa008d-d2af-44fb-8412-cdb7eb74b366_2.0.4.0_x86__9ax4dkade8z3m</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>0aaa008d-d2af-44fb-8412-cdb7eb74b366_9ax4dkade8z3m!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>0aaa008d-d2af-44fb-8412-cdb7eb74b366</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=v-altsai</RegisteredPackagePublisher>
+    <RegisteredVersion>2.0.4.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:32:42.781</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\13.png">
+      <PackagePath>Assets\13.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.604</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\bg9.jpg">
+      <PackagePath>Assets\bg9.jpg</PackagePath>
+      <Modified>2018-04-17T09:12:39.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check1.png">
+      <PackagePath>Assets\check1.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check11.png">
+      <PackagePath>Assets\check11.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check111.png">
+      <PackagePath>Assets\check111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.641</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check1111.png">
+      <PackagePath>Assets\check1111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.643</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check2.png">
+      <PackagePath>Assets\check2.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.645</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check22.png">
+      <PackagePath>Assets\check22.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.646</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check3.png">
+      <PackagePath>Assets\check3.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.648</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\check33.png">
+      <PackagePath>Assets\check33.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.650</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\checked.png">
+      <PackagePath>Assets\checked.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\crrect_answer1.mp3">
+      <PackagePath>Assets\crrect_answer1.mp3</PackagePath>
+      <Modified>2018-04-17T09:12:39.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\crrect_answer3.mp3">
+      <PackagePath>Assets\crrect_answer3.mp3</PackagePath>
+      <Modified>2018-04-17T09:12:39.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\GreenDot.png">
+      <PackagePath>Assets\GreenDot.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\Image1.png">
+      <PackagePath>Assets\Image1.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image11.png">
+      <PackagePath>Assets\image11.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.657</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image111.png">
+      <PackagePath>Assets\image111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.658</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image2.png">
+      <PackagePath>Assets\image2.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.659</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image22.png">
+      <PackagePath>Assets\image22.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.661</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image222.png">
+      <PackagePath>Assets\image222.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.663</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image3.png">
+      <PackagePath>Assets\image3.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.664</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image33.png">
+      <PackagePath>Assets\image33.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.665</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\image333.png">
+      <PackagePath>Assets\image333.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT11.png">
+      <PackagePath>Assets\IoT11.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.608</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT111.png">
+      <PackagePath>Assets\IoT111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT22.png">
+      <PackagePath>Assets\IoT22.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.610</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT222.png">
+      <PackagePath>Assets\IoT222.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.611</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT33.png">
+      <PackagePath>Assets\IoT33.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.612</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\IoT333.png">
+      <PackagePath>Assets\IoT333.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.613</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\line1.png">
+      <PackagePath>Assets\line1.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.667</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.615</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num1.png">
+      <PackagePath>Assets\num1.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num11.png">
+      <PackagePath>Assets\num11.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.670</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num111.png">
+      <PackagePath>Assets\num111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.672</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num1111.png">
+      <PackagePath>Assets\num1111.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.673</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num2.png">
+      <PackagePath>Assets\num2.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.674</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num22.png">
+      <PackagePath>Assets\num22.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.676</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num222.png">
+      <PackagePath>Assets\num222.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.677</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num3.png">
+      <PackagePath>Assets\num3.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.679</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num33.png">
+      <PackagePath>Assets\num33.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.680</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\num333.png">
+      <PackagePath>Assets\num333.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.682</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\RedDot.png">
+      <PackagePath>Assets\RedDot.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.617</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.618</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:12:39.633</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\Assets\WIN13.png">
+      <PackagePath>Assets\WIN13.png</PackagePath>
+      <Modified>2018-04-17T09:12:39.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\clrcompression.dll">
+      <PackagePath>clrcompression.dll</PackagePath>
+      <Modified>2016-06-13T13:51:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\FontAwesome.UWP\FontAwesome.otf">
+      <PackagePath>FontAwesome.UWP\FontAwesome.otf</PackagePath>
+      <Modified>2017-01-05T13:15:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-04-17T09:30:55.051</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\signedUWP.dll">
+      <PackagePath>signedUWP.dll</PackagePath>
+      <Modified>2018-04-17T09:32:41.510</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\signedUWP.exe">
+      <PackagePath>signedUWP.exe</PackagePath>
+      <Modified>2018-04-17T09:32:42.746</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\signedUWP.pdb">
+      <PackagePath>signedUWP.pdb</PackagePath>
+      <Modified>2018-04-17T09:32:42.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\sni.dll">
+      <PackagePath>sni.dll</PackagePath>
+      <Modified>2016-06-13T13:51:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\_Resources\0.rsrc">
+      <PackagePath>_Resources\0.rsrc</PackagePath>
+      <Modified>2018-04-17T09:31:36.173</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\_Resources\1.rsrc">
+      <PackagePath>_Resources\1.rsrc</PackagePath>
+      <Modified>2018-04-17T09:31:36.230</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Release\ilc\_Resources\index.txt">
+      <PackagePath>_Resources\index.txt</PackagePath>
+      <Modified>2018-04-17T09:31:36.240</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\">
+      <Name>Microsoft.NET.Native.Framework.1.3</Name>
+      <Version>1.3.24201.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.3, MinVersion = 1.3.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\.\arm\ret\Native\Microsoft.NET.Native.Framework.1.3.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\">
+      <Name>Microsoft.NET.Native.Framework.1.3</Name>
+      <Version>1.3.24201.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.3, MinVersion = 1.3.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\.\x64\ret\Native\Microsoft.NET.Native.Framework.1.3.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\">
+      <Name>Microsoft.NET.Native.Framework.1.3</Name>
+      <Version>1.3.24201.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.3, MinVersion = 1.3.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.3\1.3\.\x86\ret\Native\Microsoft.NET.Native.Framework.1.3.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\">
+      <Name>Microsoft.NET.Native.Runtime.1.4</Name>
+      <Version>1.4.24201.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.4, MinVersion = 1.4.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\.\AppX\ARM\Microsoft.NET.Native.Runtime.1.4.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\">
+      <Name>Microsoft.NET.Native.Runtime.1.4</Name>
+      <Version>1.4.24201.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.4, MinVersion = 1.4.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\.\AppX\x64\Microsoft.NET.Native.Runtime.1.4.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\">
+      <Name>Microsoft.NET.Native.Runtime.1.4</Name>
+      <Version>1.4.24201.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.4, MinVersion = 1.4.24201.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.4\1.4\.\AppX\x86\Microsoft.NET.Native.Runtime.1.4.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.25426.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.25426.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.25426.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.25426.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.25426.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.25426.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

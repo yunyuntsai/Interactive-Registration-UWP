@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-ru"
+"ResourceDimensions"		"language-ru-ru"
+
+[Files]
+"C:\Users\v-altsai\Documents\Visual Studio 2017\IoT_Interactive_Registraion_UWP\signedUWP\obj\x64\Release\split.language-ru.pri"			"resources.pri"

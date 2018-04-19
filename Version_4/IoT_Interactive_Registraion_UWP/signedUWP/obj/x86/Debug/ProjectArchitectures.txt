@@ -1,0 +1,1 @@
+C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Interactive_Registraion_UWP\signedUWP\signedUWP.csproj;x86

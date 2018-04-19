@@ -1,0 +1,2 @@
+MainPackage=C:\Users\v-altsai\Documents\Visual Studio 2017\IoT_Interactive_Registraion_UWP\signedUWP\bin\x64\Release\signedUWP_2.0.4.0_x64.appx
+SymbolPackage=C:\Users\v-altsai\Documents\Visual Studio 2017\IoT_Interactive_Registraion_UWP\signedUWP\AppPackages\signedUWP_2.0.4.0_Test\signedUWP_2.0.4.0_x64.appxsym
