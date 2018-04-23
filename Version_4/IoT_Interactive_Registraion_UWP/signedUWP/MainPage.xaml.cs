@@ -96,6 +96,9 @@ namespace signedUWP
                         ContentFrame.Navigate(typeof(RegisterPage));
                         break;
 
+                    case "AddVisitor":
+                        ContentFrame.Navigate(typeof(AddVisitorPage));
+                        break;
 
                     case "Users":
                         var dateToFormat = System.DateTime.Now;

@@ -15,7 +15,8 @@
 
         <SolidColorBrush x:Key="defaultTimerColor" Color="#FFFFFF" />
         <SolidColorBrush x:Key="focusTimerColor" Color="#7F00FF9A" />
-
+        <SolidColorBrush x:Key="warningColor" Color="#FFC62222" />
+        <SolidColorBrush x:Key="grayColor" Color="#CCC" />
         <Style x:Key="whiteText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#FFFFFF"/>
         </Style>
@@ -108,8 +109,8 @@
                         <EntranceThemeTransition />
                     </TransitionCollection>
                 </Popup.ChildTransitions>
-                <StackPanel x:ConnectionId='45' x:Name="gdChild" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50">
-                    <TextBlock x:ConnectionId='46' Name="popUpDisplayText" FontSize="24" Foreground="#FFFFFF">Welcome</TextBlock>
+                <StackPanel x:ConnectionId='55' x:Name="gdChild" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50">
+                    <TextBlock x:ConnectionId='56' Name="popUpDisplayText" FontSize="24" Foreground="#FFFFFF">Welcome</TextBlock>
                 </StackPanel>
             </Popup>
             <Popup x:ConnectionId='17' x:Name="PopUpWidget1"                                 >
@@ -118,14 +119,15 @@
                         <EntranceThemeTransition />
                     </TransitionCollection>
                 </Popup.ChildTransitions>
-                <StackPanel x:ConnectionId='39' x:Name="gdChild1" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50">
-                    <TextBlock x:ConnectionId='40' Name="popUpDisplayText1" FontSize="24" Foreground="#FFFFFF"/>
-                    <CaptureElement x:ConnectionId='41' Name="PreviewControl" Stretch="Uniform"/>
-                    <Image x:ConnectionId='42' x:Name="imagePreview" Stretch="Uniform"  />
+                <StackPanel x:ConnectionId='49' x:Name="gdChild1" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50">
                     <StackPanel Orientation="Horizontal">
-                        <AppBarButton x:ConnectionId='43' Icon="Save" Label="Save"                          HorizontalAlignment="Left" Width="150"/>
-                        <AppBarButton x:ConnectionId='44' Icon="Refresh" Label="Retake"                             HorizontalAlignment="Right" Width="150"/>
+                        <TextBlock x:ConnectionId='52' Name="popUpDisplayText1" FontSize="24" Foreground="#FFFFFF"/>
+                        <AppBarButton x:ConnectionId='53' Name="appbarButton3" Icon="Save" Label="Save"                          HorizontalAlignment="Right" Width="100"  Margin="50,0,0,10"  Background="{ThemeResource MyAcrylicBrush3}" Visibility="Collapsed"/>
+                        <AppBarButton x:ConnectionId='54' Name="appbarButton4" Icon="Refresh" Label="Retake"                             HorizontalAlignment="Right" Width="100" Margin="65,0,0,0"  Background="{ThemeResource MyAcrylicBrush3}" Visibility="Collapsed"/>
                     </StackPanel>
+                    <CaptureElement x:ConnectionId='50' Name="PreviewControl" Stretch="Uniform" Margin="0,20,0,0"/>
+                    <Image x:ConnectionId='51' x:Name="imagePreview" Stretch="Uniform"  />
+                  
                 </StackPanel>
             </Popup>
             <Popup x:ConnectionId='18' x:Name="PopUpWidget2"                                 >
@@ -134,11 +136,11 @@
                         <EntranceThemeTransition />
                     </TransitionCollection>
                 </Popup.ChildTransitions>
-                <StackPanel x:ConnectionId='35' x:Name="gdChild2" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50">
-                    <TextBlock x:ConnectionId='36' Name="popUpDisplayText2" FontSize="18" Foreground="#FFFFFF"/>
+                <StackPanel x:ConnectionId='45' x:Name="gdChild2" Background="{ThemeResource MyAcrylicBrush2}" Padding="70 50" Margin="0,0,0,0">
+                    <TextBlock x:ConnectionId='46' Name="popUpDisplayText2" FontSize="18" Foreground="#FFFFFF"/>
                     <StackPanel Orientation="Horizontal">
-                        <AppBarButton x:ConnectionId='37' Icon="Like" Label="Go Snap"                          HorizontalAlignment="Left" Width="150"  Margin="0,10,0,0"  Background="{ThemeResource MyAcrylicBrush3}"/>
-                        <AppBarButton x:ConnectionId='38' Icon="LikeDislike" Label="Skip"                          HorizontalAlignment="Right" Width="150" Margin="15,10,0,0"  Background="{ThemeResource MyAcrylicBrush3}"/>
+                        <AppBarButton x:ConnectionId='47' Name="appbarButton1" Icon="Like" Label="Go Snap"                          HorizontalAlignment="Left" Width="150"  Margin="0,10,0,0"  Background="{ThemeResource MyAcrylicBrush3}"/>
+                        <AppBarButton x:ConnectionId='48' Name="appbarButton2" Icon="LikeDislike" Label="Skip"                          HorizontalAlignment="Right" Width="150" Margin="15,10,0,0"  Background="{ThemeResource MyAcrylicBrush3}"/>
                     </StackPanel>
                 </StackPanel>
             </Popup>
@@ -148,19 +150,83 @@
                         <EntranceThemeTransition />
                     </TransitionCollection>
                 </Popup.ChildTransitions>
-                <StackPanel x:ConnectionId='32' x:Name="gdChild3" Padding="70 50">
+                <StackPanel x:ConnectionId='42' x:Name="gdChild3" Padding="70 50">
                     <StackPanel>
                         <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="120" MaxWidth="120">
                             <Canvas Width="100" Height="100">
-                                <Ellipse x:ConnectionId='33' Name="NumCircle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
-                                <TextBlock x:ConnectionId='34' Name="popUpDisplayText3"  FontSize="50" Foreground="#FFFFFF" Canvas.Left="35" Canvas.Top="15" />
+                                <Ellipse x:ConnectionId='43' Name="NumCircle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
+                                <TextBlock x:ConnectionId='44' Name="popUpDisplayText3"  FontSize="50" Foreground="#FFFFFF" Canvas.Left="35" Canvas.Top="15" />
                             </Canvas>
                         </Viewbox>
                     </StackPanel>
                 </StackPanel>
             </Popup>
+            <!--Add new Vistor Popup-->
+            <Popup x:ConnectionId='20' x:Name="popupAddNewUser"                                       >
+
+                <Popup.ChildTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition />
+                    </TransitionCollection>
+                </Popup.ChildTransitions>
+
+                <StackPanel x:ConnectionId='35' x:Name="popupAddNewUserWindow" Padding="70 50" Margin="-24 -24" Background="{ThemeResource MyAcrylicBrush2}">
+
+                    <Grid Padding="20" Background="#FFFFFF" Width="500">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60px"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid Grid.Row="0" BorderBrush="#CCC" BorderThickness="0 0 0 1">
+                            <TextBlock Text="Add New Visitor" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0 6 0 0" FontSize="20"></TextBlock>
+                            <fa:FontAwesome x:ConnectionId='41' x:Name="cancelPanel" Icon="times" FontSize="20" Foreground="{StaticResource grayColor}" HorizontalAlignment="Right" VerticalAlignment="top"                                                                                                                   />
+                        </Grid>
+
+                        <StackPanel Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="#CCC" Padding="0 20 0 20">
+
+                            <StackPanel Orientation="Horizontal" Height="50">
+                                <TextBlock Width="120" Height="30">Generate ID :</TextBlock>
+                                <TextBlock x:ConnectionId='40' Width="300" Height="30" Name="inputVisitorId"></TextBlock>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" Height="50">
+                                <TextBlock Width="120" Height="30">Name :</TextBlock>
+                                <TextBox x:ConnectionId='39' Width="300" Height="30" Name="inputVisitorName"></TextBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Height="50">
+                                <TextBlock Width="120" Height="30">Company :</TextBlock>
+                                <TextBox x:ConnectionId='38'  Width="300" Height="30" Name="inputVisitorCompany"></TextBox>
+                            </StackPanel>
+
+                          
+
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Padding="0 20 0 0">
+                            <Button x:ConnectionId='36' Content="Register" Margin="10 0"                          ></Button>
+                            <Button x:ConnectionId='37' Content="Register, And Check In Now"                                    ></Button>
+                        </StackPanel>
+
+
+                    </Grid>
+
+                </StackPanel>
+            </Popup>
             <!--Header bar-->
-            <TextBlock FontSize="24">IoT Innovation Center</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontSize="24" Grid.Column="0" Style="{StaticResource whiteText}">IoT Invoration Center</TextBlock>
+                <TextBlock x:ConnectionId='34' x:Name="Time" Grid.Column="1" HorizontalAlignment="Right" FontSize="24" TextAlignment="Right" Style="{StaticResource whiteText}"></TextBlock>
+
+            </Grid>
 
             <Grid Margin="24, 24" >
 
@@ -189,8 +255,8 @@
 
                             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="120" MaxWidth="120" Canvas.ZIndex="2">
                                 <Canvas Width="100" Height="100">
-                                    <Ellipse x:ConnectionId='30' x:Name="step1Circle" Stroke="#FFFFFF" Fill="#33000000" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100" Canvas.ZIndex="2"/>
-                                    <fa:FontAwesome x:ConnectionId='31' x:Name="step1Icon" Icon="Barcode" FontSize="48" Foreground="#FFFFFF" Canvas.Left="26" Canvas.Top="28" Canvas.ZIndex="2" />
+                                    <Ellipse x:ConnectionId='32' x:Name="step1Circle" Stroke="#FFFFFF" Fill="#33000000" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100" Canvas.ZIndex="2"/>
+                                    <fa:FontAwesome x:ConnectionId='33' x:Name="step1Icon" Icon="Barcode" FontSize="48" Foreground="#FFFFFF" Canvas.Left="26" Canvas.Top="28" Canvas.ZIndex="2" />
                                     <TextBlock Text="1. Scan Bar Code" Style="{StaticResource stepDisplayText}"></TextBlock>
                                 </Canvas>
                             </Viewbox>
@@ -202,8 +268,8 @@
                         <StackPanel Grid.Column="1" Padding="40 20">
                             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="120" MaxWidth="120">
                                 <Canvas Width="100" Height="100">
-                                    <Ellipse x:ConnectionId='28' Name="step2Circle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
-                                    <fa:FontAwesome x:ConnectionId='29' Name="step2Icon" Icon="tags" FontSize="48"  HorizontalAlignment="Center" Foreground="White" Canvas.Left="26" Canvas.Top="28" />
+                                    <Ellipse x:ConnectionId='30' Name="step2Circle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
+                                    <fa:FontAwesome x:ConnectionId='31' Name="step2Icon" Icon="tags" FontSize="48"  HorizontalAlignment="Center" Foreground="White" Canvas.Left="26" Canvas.Top="28" />
                                     <TextBlock Text="2. Sense UWB Tag" Style="{StaticResource stepDisplayText}"></TextBlock>
 
                                 </Canvas>
@@ -216,8 +282,8 @@
                         <StackPanel Grid.Column="2" Padding="40 20">
                             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="120" MaxWidth="120">
                                 <Canvas Width="100" Height="100">
-                                    <Ellipse x:ConnectionId='26' Name="step3Circle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
-                                    <fa:FontAwesome x:ConnectionId='27' Name="step3Icon" Icon="thumbsUp" FontSize="48"  HorizontalAlignment="Center" Foreground="White" Canvas.Left="26" Canvas.Top="28" />
+                                    <Ellipse x:ConnectionId='28' Name="step3Circle" Fill="#33000000" Stroke="#EBEBEB" StrokeThickness="5" VerticalAlignment="top" Width="100" Height="100"></Ellipse>
+                                    <fa:FontAwesome x:ConnectionId='29' Name="step3Icon" Icon="thumbsUp" FontSize="48"  HorizontalAlignment="Center" Foreground="White" Canvas.Left="26" Canvas.Top="28" />
                                     <TextBlock Text="3. Register Complete" Style="{StaticResource stepDisplayText}"></TextBlock>
                                 </Canvas>
                             </Viewbox>
@@ -240,8 +306,8 @@
                     <Viewbox MaxHeight="200" MaxWidth="200" Margin="0 0 40 0" Grid.Column="0" HorizontalAlignment="Right">
                         <Canvas Width="100" Height="100">
                             <Ellipse Fill="#4CFFFFFF" Height="100" Width="100"></Ellipse>
-                            <PersonPicture x:ConnectionId='25'                                                 />
-
+                            <PersonPicture x:ConnectionId='26'                                                 />
+                            <HyperlinkButton x:ConnectionId='27'  BorderThickness="0" Canvas.Left="27" Canvas.Top="95" Content="New Visitor?" Foreground="#FF48A0FF" FontWeight="Bold" FontSize="8"                               BorderBrush="White"></HyperlinkButton>
                         </Canvas>
                     </Viewbox>
 
@@ -260,19 +326,19 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Grid.Row="0" Grid.Column="0"  Style="{StaticResource userInfoKey}">Register No:</TextBlock>
-                            <TextBox x:ConnectionId='20' Grid.Row="0" Grid.Column="1" Name="registerNo"  HorizontalAlignment="Right" Height="30" MinWidth="120"                            Visibility="Visible" Margin="20 0 0 0">
+                            <TextBox x:ConnectionId='21' Grid.Row="0" Grid.Column="1" Name="registerNo"  HorizontalAlignment="Right" Height="30" MinWidth="120"                            Visibility="Visible" Margin="20 0 0 0">
 
                             </TextBox>
-                            <TextBlock x:ConnectionId='21' Grid.Row="0" Grid.Column="1" Name="registerNoText" Visibility="Collapsed" Style="{StaticResource userInfoValue}" Margin="20 0 0 0"></TextBlock>
+                            <TextBlock x:ConnectionId='22' Grid.Row="0" Grid.Column="1" Name="registerNoText" Visibility="Collapsed" Style="{StaticResource userInfoValue}" Margin="20 0 0 0"></TextBlock>
 
                             <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource userInfoKey}">Name:</TextBlock>
-                            <TextBlock x:ConnectionId='22' Name="displayName" Grid.Row="1" Grid.Column="1" Style="{StaticResource userInfoValue}"  Margin="20 0 0 0" >
+                            <TextBlock x:ConnectionId='23' Name="displayName" Grid.Row="1" Grid.Column="1" Style="{StaticResource userInfoValue}"  Margin="20 0 0 0" >
 
                             </TextBlock>
 
                             <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource userInfoKey}">UWB ID:</TextBlock>
-                            <TextBox x:ConnectionId='23' Grid.Row="2" Grid.Column="1" Name="regiserUwbId" Margin="20 0 0 0" Height="30" HorizontalAlignment="Right" MinWidth="120" Visibility="Visible"                              ></TextBox>
-                            <TextBlock x:ConnectionId='24' Grid.Row="2" Grid.Column="1" Name="regiserUwbIdText" Margin="20 0 0 0" Visibility="Collapsed" Style="{StaticResource userInfoValue}"></TextBlock>
+                            <TextBox x:ConnectionId='24' Grid.Row="2" Grid.Column="1" Name="regiserUwbId" Margin="20 0 0 0" Height="30" HorizontalAlignment="Right" MinWidth="120" Visibility="Visible"                              ></TextBox>
+                            <TextBlock x:ConnectionId='25' Grid.Row="2" Grid.Column="1" Name="regiserUwbIdText" Margin="20 0 0 0" Visibility="Collapsed" Style="{StaticResource userInfoValue}"></TextBlock>
 
 
                         </Grid>

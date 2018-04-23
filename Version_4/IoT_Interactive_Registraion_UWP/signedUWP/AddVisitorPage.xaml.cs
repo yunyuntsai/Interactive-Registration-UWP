@@ -1,5 +1,4 @@
-﻿
-using Microsoft.WindowsAzure.Storage;
+﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -13,9 +12,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using Windows.ApplicationModel.Core;
 using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -27,16 +24,13 @@ using Windows.Media.Playback;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
-using Windows.System.Threading;
 using Windows.UI.Core;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -47,15 +41,10 @@ namespace signedUWP
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    /// 
-
-
-
-    public sealed partial class RegisterPage : Page, System.ComponentModel.INotifyPropertyChanged
+    public sealed partial class AddVisitorPage : Page
     {
-
-        public string ScanTagId = null;
-        public string BarcodeId = null;
+        public string vCompany = null;
+        public string vName = null;
         public int TotalUser = 0;
         public int ArrivedUser = 0;
         public int Delay_Param;
@@ -67,7 +56,7 @@ namespace signedUWP
         public string registerName = "";
         public string registorVisitorId = "";
         private int countdown;
-        DispatcherTimer Timer = new DispatcherTimer();
+        DispatcherTimer Timer1 = new DispatcherTimer();
         DispatcherTimer Timer2 = new DispatcherTimer();
         DispatcherTimer Timer3 = new DispatcherTimer();
         DispatcherTimer Timer4 = new DispatcherTimer();
@@ -75,64 +64,17 @@ namespace signedUWP
         private bool _mirroringPreview;
         private CameraRotationHelper _rotationHelper;
         private bool _externalCamera;
-        public int _VisitorID;
         StorageFile userImageFile;
         BitmapImage userImage;
         private string userImagePath;
         private Windows.ApplicationModel.Contacts.Contact _currentContact;
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
-        public RegisterPage()
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        public AddVisitorPage()
         {
             this.InitializeComponent();
-            CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
-            //BackToDefaultStep();
-            Timer.Tick += Timer_Tick;
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Start();
-
         }
-
-        private void Timer_Tick(object sender, object e)
-        {
-            Time.Text = DateTime.Now.ToString("h:mm:ss tt");
-        }
-
-        //private void timer1_Tick(object sender, object e)
-        //{
-
-
-        //    Debug.WriteLine("i counter : " + counter);
-        //    if (counter == 0)
-        //    {
-        //        line1.Visibility = Visibility.Visible;
-        //        counter = 1;
-        //    }
-        //    else
-        //    {
-        //        counter--;
-        //        line1.Visibility = Visibility.Collapsed;
-        //    }
-
-        //}
-        //private void timer2_Tick(object sender, object e)
-        //{
-
-
-        //    Debug.WriteLine("o counter : " + counter2);
-        //    if (counter2 == 0)
-        //    {
-        //        line2.Visibility = Visibility.Visible;
-        //        counter2 = 1;
-        //    }
-        //    else
-        //    {
-        //        counter2--;
-        //        line2.Visibility = Visibility.Collapsed;
-        //    }
-
-        //}
-
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             var dateToFormat = System.DateTime.Now;
@@ -161,10 +103,25 @@ namespace signedUWP
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
 
-                registerNo.Visibility = Visibility.Collapsed;
-                BarcodeId = registerNo.Text;
-                visitorCheckIn();
-              
+                VisitorName.Visibility = Visibility.Collapsed;
+                vName = VisitorName.Text;
+                VisitorNameText.Text = vName;
+                VisitorNameText.Visibility = Visibility.Visible;
+
+                //var userInfo = await GetUsersDetailInfoAsync();
+
+                step1Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
+                step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
+
+                //registerName = userInfo.registerName;
+                displayName.Text = vName;
+
+                visitorCompany.Visibility = Visibility.Visible;
+
+                step1ColorStoryboard.Stop();
+                step2ColorStoryboard.Begin();
+
+                visitorCompany.Focus(FocusState.Programmatic);
             }
             else
             {
@@ -176,12 +133,46 @@ namespace signedUWP
             }
         }
 
-        private async void UwbIdKeyDownHandler(object sender, KeyRoutedEventArgs e)
+        private async void companyKeyDownHandler(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
-            {          
-                ScanTagId = regiserUwbId.Text;
-                visitorUwbBinding();      
+            {
+                visitorCompany.Visibility = Visibility.Collapsed;
+                vCompany = visitorCompany.Text;
+                visitorCompanyText.Text = vCompany;
+                visitorCompanyText.Visibility = Visibility.Visible;
+
+                step2Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
+                step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
+                step2ColorStoryboard.Stop();
+
+                step3ColorStoryboard.Begin();
+                await PostAsync(vName, vCompany);
+                step3Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
+                step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
+
+                popUpDisplayText.Text = "Add " + vName +" succeed";
+                PopUpWidget.IsOpen = true;
+
+                //string name = propName.Value.ToString();
+                //string serialnum = propSerialnum.Value.ToString();
+
+                /*MediaElement mediaElement = new MediaElement();
+                var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+                Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Welcome " + registerName);
+                mediaElement.SetSource(stream, stream.ContentType);
+                mediaElement.Play();*/
+
+
+
+                await CountUserList();
+                await System.Threading.Tasks.Task.Delay(Delay_Param * 1000);
+
+
+                BackToDefaultStep();
+                //displayName.Text = userInfo.registerName;
+                //await CountUserList();
+                //Timer3.Stop();
             }
             else
             {
@@ -191,70 +182,7 @@ namespace signedUWP
             }
         }
 
-        // Step1: Visitor Check In
-        private async void visitorCheckIn()
-        {
-            registerNo.Visibility = Visibility.Collapsed;
-            registerNoText.Text = BarcodeId;
-            registerNoText.Visibility = Visibility.Visible;
-
-            var userInfo = await GetUsersDetailInfoAsync(BarcodeId);
-
-            step1Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
-            step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
-
-            registerName = userInfo.registerName;
-            displayName.Text = userInfo.registerName;
-
-            regiserUwbId.Visibility = Visibility.Visible;
-
-            step1ColorStoryboard.Stop();
-            step2ColorStoryboard.Begin();
-
-            regiserUwbId.Focus(FocusState.Programmatic);
-
-            PopUpWidget2.IsOpen = true;
-            popUpDisplayText2.Text = "Do you want to take a picture for badge?";
-
-        }
-        // Step2: Visitor Binding Uwb and BarCode
-        private async void visitorUwbBinding()
-        {
-
-            regiserUwbId.Visibility = Visibility.Collapsed;
-
-            regiserUwbIdText.Text = ScanTagId;
-            regiserUwbIdText.Visibility = Visibility.Visible;
-
-            step2Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
-            step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
-            step2ColorStoryboard.Stop();
-
-            step3ColorStoryboard.Begin();
-            await PostAsync(BarcodeId, ScanTagId);
-
-            step3Circle.Fill = (SolidColorBrush)Resources["successStepBackground"];
-            step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
-
-            popUpDisplayText.Text = "Welcome " + registerName;
-            PopUpWidget.IsOpen = true;
-
-            //var userInfo = await GetUsersDetailInfoAsync(BarcodeId);
-            //await UpdateUwbTag(userInfo.serialnum, userInfo.registerName);
-
-            /*MediaElement mediaElement = new MediaElement();
-            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Welcome " + registerName);
-            mediaElement.SetSource(stream, stream.ContentType);
-            mediaElement.Play();*/
-
-            await CountUserList();
-            await System.Threading.Tasks.Task.Delay(Delay_Param * 1000);
-
-            BackToDefaultStep();
-        }
-
-        private async Task UpdateUwbTag(string TagSerialnum, string registerName)
+        private async Task UpdateUwbTag(string TagSerialnum, string url)
         {
             Debug.WriteLine("Update uwb tag .....");
             //Create an HTTP client object
@@ -278,7 +206,7 @@ namespace signedUWP
             }
         }
 
-        public async Task PostAsync(string UserId, string ScanId)
+        public async Task PostAsync(string Name, string Company)
         {
             Debug.WriteLine("Post!!!!");
             var httpClient = new HttpClient();
@@ -287,9 +215,13 @@ namespace signedUWP
 
             httpClient.BaseAddress = new Uri(baseAPIUrl2);
 
-            var json = "{\"NFCid\":" + ScanId + "}";
+            UserList u = await CountUserList();
+            int Tatalnum = u.Count();
+            int VisitorNewId = u.Last().Id + 1;
+            var json = "{\"ID\":" + VisitorNewId + ",\"VisitorName\":\"" + Name + "\",\"VisitorCompany\":\"" + Company + "\",\"Arrived\":" + "\"No\"" + "}";
+            Debug.WriteLine(json);
             StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
-            var result = httpClient.PutAsync(baseAPIUrl2 + "api/Users/" + UserId, content).Result;
+            var result = httpClient.PutAsync(baseAPIUrl2 + "api/Users", content).Result;
 
         }
 
@@ -301,10 +233,10 @@ namespace signedUWP
 
             httpClient.BaseAddress = new Uri(baseAPIUrl2);
 
-            var json = "{\"PhotoId\":" + registorVisitorId  +",\"PhotoUrl\":\"" +url + "\",\"PhotoName\":\"" + registerName + "\",\"VisitorId\":" + registorVisitorId+ "}";
+            var json = "{\"PhotoId\":" + registorVisitorId + ",\"PhotoUrl\":\"" + url + "\",\"PhotoName\":\"" + registerName + "\",\"VisitorId\":" + registorVisitorId + "}";
             Debug.WriteLine(json);
             StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
-            var result = httpClient.PostAsync(baseAPIUrl2 + "api/Photo" , content).Result;
+            var result = httpClient.PostAsync(baseAPIUrl2 + "api/Photo", content).Result;
 
         }
 
@@ -346,14 +278,14 @@ namespace signedUWP
                         {
 
                             dynamic userInfo = new JObject();
-                     
+
                             userInfo.registerName = propName.Value.ToString();
                             userInfo.serialnum = propSerialnum.Value.ToString();
                             userInfo.time = propTime.Value.ToString();
                             userInfo.ID = propId.Value.ToString();
 
                             registerName = propName.Value.ToString();
-                            registorVisitorId = propId.Value.ToString(); 
+                            registorVisitorId = propId.Value.ToString();
                             return userInfo;
                             //Debug.WriteLine(regiserName);
 
@@ -403,7 +335,7 @@ namespace signedUWP
                     if (httpResponseBody.ToString() != "[]")
                     {
                         Users user = new Users();
-                         u = DataHelper.GetUsers(httpResponseBody);
+                        u = DataHelper.GetUsers(httpResponseBody);
                         UserList nu = new UserList();
                         TotalUser = u.Count();
                         for (int i = 0; i < u.Count; i++)
@@ -431,8 +363,13 @@ namespace signedUWP
                         Debug.WriteLine(httpResponseBody);
                         return u;
                     }
-                    return null;
+                    else
+                    {
+                       
+                    }
+
                 }
+        
             }
             return null;
         }
@@ -484,7 +421,7 @@ namespace signedUWP
         {
 
             Debug.WriteLine("Initial CaMERA ......... ");
-            PopUpWidget2.IsOpen = false;
+
             await InitializeCameraAsync();
         }
         private async Task InitializeCameraAsync()
@@ -536,7 +473,7 @@ namespace signedUWP
                 PreviewControl.Visibility = Visibility.Visible;
                 PreviewControl.Source = _mediaCapture;
                 PreviewControl.FlowDirection = _mirroringPreview ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
-                popUpDisplayText1.Text = "Let's take a picture! Smile~";
+                popUpDisplayText1.Text = "Take a Picture!";
                 // Start viewing through the CaptureElement 
                 await _mediaCapture.StartPreviewAsync();
                 await SetPreviewRotationAsync();
@@ -576,8 +513,6 @@ namespace signedUWP
                 UploadToAzureStorage(userImageFile);
                 PopUpWidget1.IsOpen = false;
                 PopUpWidget2.IsOpen = false;
-                appbarButton3.Visibility = Visibility.Collapsed;
-                appbarButton4.Visibility = Visibility.Collapsed;
                 userImage.Stop();
                 imagePreview.Visibility = Visibility.Collapsed;
 
@@ -589,9 +524,6 @@ namespace signedUWP
             Debug.WriteLine("Retake Picture");
             imagePreview.Visibility = Visibility.Collapsed;
             PreviewControl.Visibility = Visibility.Visible;
-            appbarButton3.Visibility = Visibility.Collapsed;
-            appbarButton4.Visibility = Visibility.Collapsed;
-            PopUpWidget2.IsOpen = false;
             CameraPictureShowing();
         }
         private async void SnapButton_Click(object sender, RoutedEventArgs e)
@@ -602,34 +534,77 @@ namespace signedUWP
         {
             PopUpWidget2.IsOpen = false;
         }
-        private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+
+
+        private async void timechangeMessageShowing(int seconds)
         {
-            popupAddNewUser.IsOpen = true;
-            UserList u = await CountUserList();
-             _VisitorID = u.Last().Id + 1;
-            inputVisitorId.Text = _VisitorID.ToString();
-            Debug.WriteLine("new visitor id:" + _VisitorID.ToString());
+
+            Delay_Param = seconds;
+            popUpDisplayText.Text = "Timer Changed to " + seconds + " seconds";
+            PopUpWidget.IsOpen = true;
+            await System.Threading.Tasks.Task.Delay(3000);
+            PopUpWidget.IsOpen = false;
+        }
+        private void timerChangeI(object sender, TappedRoutedEventArgs e)
+        {
+            timerO.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+            timerT.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+
+            timerI.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
+
+            timechangeMessageShowing(5);
+        }
+        private void timerChangeO(object sender, TappedRoutedEventArgs e)
+        {
+            timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+            timerT.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+
+            timerO.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
+
+            timechangeMessageShowing(10);
+        }
+        private void timerChangeT(object sender, TappedRoutedEventArgs e)
+        {
+            timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+            timerO.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+
+            timerT.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
+
+            timechangeMessageShowing(15);
+        }
+        private async void BackToDefaultStep()
+        {
+            step1Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.User;
+            step1ColorStoryboard.Begin();
+
+            step2Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.IdBadge;
+            step2ColorStoryboard.Stop();
+
+            step3Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Check;
+            step3ColorStoryboard.Stop();
+
+
+            VisitorName.Text = String.Empty;
+            VisitorName.Visibility = Visibility.Visible;
+            VisitorNameText.Text = String.Empty;
+            VisitorNameText.Visibility = Visibility.Collapsed;
+
+            displayName.Text = "-";
+
+            visitorCompany.Text = String.Empty;
+            visitorCompany.Visibility = Visibility.Collapsed;
+            visitorCompanyText.Text = String.Empty;
+            visitorCompanyText.Visibility = Visibility.Collapsed;
+
+            PopUpWidget.IsOpen = false;
+            CurrentContact = await CreateDefaultContact();
+            VisitorName.Focus(FocusState.Programmatic);
         }
 
-        private void OnAddUserLayoutUpdated(object sender, object e)
-        {
-            if (popupAddNewUserWindow.ActualWidth == 0 && popupAddNewUserWindow.ActualHeight == 0)
-            {
-                return;
-            }
 
-            //double ActualHorizontalOffset = this.popupAddNewUser.HorizontalOffset;
-            //double ActualVerticalOffset = this.popupAddNewUser.VerticalOffset;
-
-            double NewHorizontalOffset = RegisterArea.ActualWidth;
-            double NewVerticalOffset = RegisterArea.ActualHeight;
-
-            //if (ActualHorizontalOffset != NewHorizontalOffset || ActualVerticalOffset != NewVerticalOffset)
-            //{
-            popupAddNewUserWindow.Width = NewHorizontalOffset;
-            popupAddNewUserWindow.Height = NewVerticalOffset;
-            //}
-        }
         private void OnLayoutUpdated(object sender, object e)
         {
             if (gdChild.ActualWidth == 0 && gdChild.ActualHeight == 0)
@@ -688,15 +663,13 @@ namespace signedUWP
             double b = gdChild2.ActualHeight;
 
             double NewHorizontalOffset = (RegisterArea.ActualWidth - gdChild2.ActualWidth) / 2 - 24;
-            double NewVerticalOffset = (RegisterArea.ActualHeight - gdChild2.ActualHeight) / 2 ;
+            double NewVerticalOffset = (RegisterArea.ActualHeight - gdChild2.ActualHeight) / 2;
 
             if (ActualHorizontalOffset != NewHorizontalOffset || ActualVerticalOffset != NewVerticalOffset)
             {
                 this.PopUpWidget2.HorizontalOffset = NewHorizontalOffset;
                 this.PopUpWidget2.VerticalOffset = NewVerticalOffset;
-
             }
-            Debug.WriteLine("Vertical length" + PopUpWidget2.VerticalOffset);
         }
         private void OnLayoutUpdated3(object sender, object e)
         {
@@ -721,151 +694,6 @@ namespace signedUWP
             }
         }
 
-        private void closeNewVistorPopUp()
-        {
-            popupAddNewUser.IsOpen = false;
-            cancelPanel.Foreground = (SolidColorBrush)Resources["grayColor"];
-        }
-
-
-        /*public async Task RegisterVistor()
-        {
-
-            var httpClient = new HttpClient();
-            String baseAPIUrl = "http://iotregistapi.azurewebsites.net/";
-            httpClient.BaseAddress = new Uri(baseAPIUrl);
-            
-            var myContent = JsonConvert.SerializeObject(vistorData);
-            Debug.WriteLine(myContent.ToString());
-            var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
-            var byteContent = new ByteArrayContent(buffer);
-            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var result = await httpClient.PostAsync(baseAPIUrl + "api/Users/", byteContent);
-           
-        }*/
-
-        private async Task<Visitor> createNewVisitorObjectAsync()
-        {
-            Visitor vistor = new Visitor();
-            vistor.Id = _VisitorID;
-            vistor.VisitorName = inputVisitorName.Text;
-            vistor.VisitorCompany = inputVisitorCompany.Text;
-            vistor.Arrived = "No";
-            var httpClient = new HttpClient();
-            String baseAPIUrl = "http://iotregistapi.azurewebsites.net/";
-            httpClient.BaseAddress = new Uri(baseAPIUrl);
-
-            var json = "{\"Id\":" + vistor.Id + ",\"VisitorName\":\"" + vistor.VisitorName + "\",\"VisitorCompany\":\"" + vistor.VisitorCompany + "\",\"Arrived\":\"" + vistor.Arrived + "\"}";
-            Debug.WriteLine(json);
-            StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
-            var result = httpClient.PostAsync(baseAPIUrl + "api/Users", content).Result;
-
-            return vistor;
-        }
-
-
-
-
-        private async void registerNewVistor(object sender, RoutedEventArgs e)
-        {
-
-            Visitor vistor = await createNewVisitorObjectAsync();
-
-            closeNewVistorPopUp();
-        }
-
-        private async void registerNewVistorAndCheckIn(object sender, RoutedEventArgs e)
-        {
-            Visitor vistor = await createNewVisitorObjectAsync();
-
-            BarcodeId = inputVisitorId.Text;
-            visitorCheckIn();
-
-            closeNewVistorPopUp();
-        }
-
-        private void cancelPanel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            closeNewVistorPopUp();
-        }
-
-        private void cancelPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
-        {
-            cancelPanel.Foreground = (SolidColorBrush)Resources["warningColor"];
-        }
-
-        private void cancelPanel_PointerExited(object sender, PointerRoutedEventArgs e)
-        {
-            cancelPanel.Foreground = (SolidColorBrush)Resources["grayColor"];
-        }
-
-        private async void timechangeMessageShowing(int seconds)
-        {
-
-            Delay_Param = seconds;
-            popUpDisplayText.Text = "Timer Changed to " + seconds + " seconds";
-            PopUpWidget.IsOpen = true;
-            await System.Threading.Tasks.Task.Delay(3000);
-            PopUpWidget.IsOpen = false;
-        }
-        private void timerChangeI(object sender, TappedRoutedEventArgs e)
-        {
-            timerO.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-            timerT.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-
-            timerI.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
-
-            timechangeMessageShowing(5);
-        }
-        private void timerChangeO(object sender, TappedRoutedEventArgs e)
-        {
-            timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-            timerT.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-
-            timerO.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
-
-            timechangeMessageShowing(10);
-        }
-        private void timerChangeT(object sender, TappedRoutedEventArgs e)
-        {
-            timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-            timerO.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
-
-            timerT.Foreground = (SolidColorBrush)Resources["focusTimerColor"];
-
-            timechangeMessageShowing(15);
-        }
-        private async void BackToDefaultStep()
-        {
-            step1Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Barcode;
-            step1ColorStoryboard.Begin();
-
-            step2Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Tags;
-            step2ColorStoryboard.Stop();
-
-            step3Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.ThumbsUp;
-            step3ColorStoryboard.Stop();
-
-
-            registerNo.Text = String.Empty;
-            registerNo.Visibility = Visibility.Visible;
-            registerNoText.Text = String.Empty;
-            registerNoText.Visibility = Visibility.Collapsed;
-
-            displayName.Text = "-";
-
-            regiserUwbId.Text = String.Empty;
-            regiserUwbId.Visibility = Visibility.Collapsed;
-            regiserUwbIdText.Text = String.Empty;
-            regiserUwbIdText.Visibility = Visibility.Collapsed;
-
-            PopUpWidget.IsOpen = false;
-            CurrentContact = await CreateDefaultContact();
-            registerNo.Focus(FocusState.Programmatic);
-        }
         private async void timer_TickAsync(object sender, object e)
         {
             countdown++;
@@ -901,7 +729,7 @@ namespace signedUWP
                 // create storage file in local app storage
                 string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
                 //string myPhotos = Environment.GetFolderPath(Environ
-                string p = System.IO.Path.Combine( registerName + "-" + time + ".jpg");
+                string p = System.IO.Path.Combine(registerName + "-" + time + ".jpg");
                 // create storage file in local app storage
                 StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(
                     p,
@@ -940,12 +768,6 @@ namespace signedUWP
                 // imagePreview is a <Image> object defined in XAML
                 PreviewControl.Visibility = Visibility.Collapsed;
                 imagePreview.Visibility = Visibility.Visible;
-
-                
-                popUpDisplayText1.Text = "Save picture if you like it or retake again!    ";
-                popUpDisplayText1.FontSize = 20;
-                appbarButton3.Visibility = Visibility.Visible;
-                appbarButton4.Visibility = Visibility.Visible;
                 //imagePreview.FlowDirection = FlowDirection.RightToLeft;
                 imagePreview.Source = userImage;
                 _mediaCapture = null;
@@ -997,10 +819,10 @@ namespace signedUWP
 
                 // create storage file in local app storage
                 string time = System.DateTime.Now.ToString("yyyy'-'MM'-'dd", CultureInfo.CurrentUICulture.DateTimeFormat);
-                
+
                 //string myPhotos = Environment.GetFolderPath(Environ
                 string p = System.IO.Path.Combine("picture-" + time);
-               
+
                 //  create a container 
                 CloudBlobContainer container = blobClient.GetContainerReference(p);
 
@@ -1014,21 +836,21 @@ namespace signedUWP
                 await container.SetPermissionsAsync(permissions);
                 CloudBlockBlob blob = null;
                 string filename = null;
-               
+
                 IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
                 if (null != fileStream)
                 {
-                        filename = file.Name;
-                        blob = container.GetBlockBlobReference(filename);
-                        await blob.DeleteIfExistsAsync();
-                        await blob.UploadFromFileAsync(file);
-                        var blobUrl = blob.Uri.AbsoluteUri;
-                        
-                        Debug.WriteLine("Upload picture succeed! Filename: " + filename);
-                        Debug.WriteLine("Url : " + blobUrl);
-                        await PostPhotoAsync(blobUrl);
+                    filename = file.Name;
+                    blob = container.GetBlockBlobReference(filename);
+                    await blob.DeleteIfExistsAsync();
+                    await blob.UploadFromFileAsync(file);
+                    var blobUrl = blob.Uri.AbsoluteUri;
+
+                    Debug.WriteLine("Upload picture succeed! Filename: " + filename);
+                    Debug.WriteLine("Url : " + blobUrl);
+                    await PostPhotoAsync(blobUrl);
                 }
-                return 1;               
+                return 1;
             }
             catch
             {
@@ -1036,10 +858,5 @@ namespace signedUWP
                 return 0;
             }
         }
-
-
-
     }
-
-
 }
