@@ -24,4 +24,4 @@
 
 ![alt text](https://user-images.githubusercontent.com/20013955/39126016-8c9cdb3c-4733-11e8-97fc-f8f2c0994d84.png)
 
-![alt text](https://user-images.githubusercontent.com/20013955/39126016-8c9cdb3c-4733-11e8-97fc-f8f2c0994d84.png)
+![alt text](https://user-images.githubusercontent.com/20013955/39126040-9d8a1004-4733-11e8-9c17-99cbc1d5f443.png)
