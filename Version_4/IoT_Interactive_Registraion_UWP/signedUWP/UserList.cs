@@ -20,7 +20,7 @@ namespace signedUWP
         {
             for (int i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Id == id)
+                if (Items[i].VisitorId == id)
                 {
                     return Items[i];
                 }

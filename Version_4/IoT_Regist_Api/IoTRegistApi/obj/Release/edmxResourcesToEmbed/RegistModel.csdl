@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tag_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TagName" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="NfcId" Type="Int64" />
+    <Property Name="TagId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Visitors_Profile">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Name="VisitorName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VisitorCompany" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Arrived" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VisitTime" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="NFCid" Type="Int64" Nullable="false" />
+    <Property Name="VisitorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visitors_Photo">
+    <Key>
+      <PropertyRef Name="PhotoId" />
+    </Key>
+    <Property Name="PhotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhotoUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VisitorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Registration_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tag_Profile" EntityType="Self.Tag_Profile" />
+    <EntitySet Name="Visitors_Profile" EntityType="Self.Visitors_Profile" />
+    <EntitySet Name="Visitors_Photo" EntityType="Self.Visitors_Photo" />
+    <EntitySet Name="Event_ProfileSet" EntityType="WebApplication2201802_dbModel.Event_Profile" />
+    <EntitySet Name="History_Visitor_Detail" EntityType="WebApplication2201802_dbModel.History_Visitor_Detail" />
+  </EntityContainer>
+  <EntityType Name="Event_Profile">
+    <Key>
+      <PropertyRef Name="eventID" />
+    </Key>
+    <Property Name="eventID" Type="Int32" Nullable="false" />
+    <Property Name="EventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="History_Visitor_Detail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VisitorId" Type="Int32" Nullable="false" />
+    <Property Name="VisitorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VisitorCompany" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Arrived" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VisitTime" Type="DateTime" Precision="3" Nullable="true" />
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="PhotoUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

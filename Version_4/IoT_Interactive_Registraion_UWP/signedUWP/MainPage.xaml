@@ -18,9 +18,8 @@
                     Canvas.ZIndex="0" OpenPaneLength="180" Margin="0,0,0,0" AlwaysShowHeader="False">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="WebCam" Content="Registration" Tag="Register" AccessKey="R"></NavigationViewItem>
-                <NavigationViewItem Icon="Add" Content="AddVisitor" Tag="Add" AccessKey="A"></NavigationViewItem>
                 <NavigationViewItem Icon="Contact" Content="Users" Tag="Users" AccessKey="p"></NavigationViewItem>
-                <NavigationViewItem Icon="List" Content="Orders" Tag="Orders" AccessKey="O"></NavigationViewItem>
+                <NavigationViewItem Icon="List" Content="Lists" Tag="Lists" AccessKey="O"></NavigationViewItem>
 
                 <NavigationViewItemSeparator/>
 

@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="400" />
+    
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
-            <ListView x:ConnectionId='13' Name="InventoryList"  Grid.Row="1" Grid.Column="1"        
+            <ListView x:ConnectionId='14' Name="InventoryList"  Grid.Row="1" Grid.Column="1"        
                       ScrollViewer.VerticalScrollBarVisibility="Auto"
                       ScrollViewer.IsVerticalRailEnabled="True"
                       ScrollViewer.VerticalScrollMode="Enabled"
@@ -61,40 +61,44 @@
                             <TextBlock Text="Name" Width="120" FontSize="20" Foreground="DarkRed"  />
                             <TextBlock Text="Company" Width="120" FontSize="20" Foreground="DarkRed"  />
                             <TextBlock Text="Arrived" Width="120" FontSize="20" Foreground="DarkRed" />
-                            <TextBlock Text="VisitTime" Width="120" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="VisitTime" Width="160" FontSize="20" Foreground="DarkRed" />
                             <TextBlock Text="NFC id" Width="120" FontSize="20" Foreground="DarkRed" />
                             <TextBlock Text="Tag id" Width="120" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="Event id" Width="120" FontSize="20" Foreground="DarkRed" />
                         </StackPanel>
 
                     </DataTemplate>
                 </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate                         >
-                        <StackPanel x:ConnectionId='14' Orientation="Horizontal" >
+                        <StackPanel x:ConnectionId='15' Orientation="Horizontal" >
 
-                            <TextBlock x:ConnectionId='15' Name="UserId"
-                                                          
+                            <TextBlock x:ConnectionId='16' Name="UserId"
+                                                                 
                                         Width="40" />
-                            <TextBlock x:ConnectionId='16' Name="UserName"
+                            <TextBlock x:ConnectionId='17' Name="UserName"
                                                             
                                         Width="125" />
 
-                            <TextBlock x:ConnectionId='17'  Name="Company"
+                            <TextBlock x:ConnectionId='18'  Name="Company"
                                                                           
                                         Width="125" />
 
-                            <TextBlock x:ConnectionId='18'  Name="Arrived"
+                            <TextBlock x:ConnectionId='19'  Name="Arrived"
                                                                           
-                                        Width="120" />
+                                        Width="110" />
 
-                            <TextBlock x:ConnectionId='19'  Name="Visittime"
+                            <TextBlock x:ConnectionId='20'  Name="Visittime"
                                                                   
-                                       Width="120" />
-                            <TextBlock x:ConnectionId='20'  Name="TagID"
+                                       Width="170" />
+                            <TextBlock x:ConnectionId='21'  Name="TagID"
                                                              
                                         Width="120" />
-                            <TextBlock x:ConnectionId='21'  Name="TagId"
+                            <TextBlock x:ConnectionId='22'  Name="TagId"
                                                              
+                                        Width="150" />
+                            <TextBlock x:ConnectionId='23'  Name="EventId"
+                                                               
                                         Width="150" />
                         </StackPanel>
                     </DataTemplate>
@@ -109,30 +113,38 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50"  HorizontalAlignment="Left">
+                <Button x:ConnectionId='13' Content="Reset"  Background="LightBlue" HorizontalAlignment="Left" VerticalAlignment="Top"                        Width="100" Height="50"/>
+            </Grid>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50" >
+                <Button x:ConnectionId='12' Content="Delete"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                       Width="100" Height="50"/>
+            </Grid>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50" HorizontalAlignment="Right">
+                <Button x:ConnectionId='11' Content="Delete All"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                          Width="100" Height="50"/>
+            </Grid>
+            <Grid x:ConnectionId='8' Name="MainGrid4" Grid.Column="3" Grid.Row="1" >
+                <StackPanel Padding="10" Margin="0,0,0,0" Orientation="Horizontal">
 
-            <Grid Grid.Column="1" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button x:ConnectionId='12' Content="Restate"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                        Width="200" Height="50"/>
-            </Grid>
-            <Grid Grid.Column="2" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button x:ConnectionId='11' Content="Delete"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                       Width="200" Height="50"/>
-            </Grid>
-            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button x:ConnectionId='10' Content="Delete All"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"                          Width="200" Height="50"/>
-            </Grid>
+                    <AppBarButton x:ConnectionId='9' Name="appbarButton7" Icon="Import" Label="Import CSV"                            Width="100" Height="55"  Background="LightBlue" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                    <AppBarButton x:ConnectionId='10' Name="appbarButton6" Icon="Save" Label="Save 2 History"                             Width="100"  Background="LightBlue" Margin="40,0,0,0"/>
 
+                </StackPanel>
+            </Grid>
         </Grid>
 
-        <Grid x:ConnectionId='4' Name="MainGrid4" Grid.Column="1" Grid.Row="1"  >
-            <Button x:ConnectionId='9' Content="Import CSV"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center"                            Width="200" Height="50"/>
-        </Grid>
-        <Grid x:ConnectionId='5' Grid.Column="1" AllowDrop="True"                                             Background="LightBlue" Width="200" Height="50"  Visibility="Collapsed">
+     
+        <Grid x:ConnectionId='4' Grid.Column="1" AllowDrop="True"                                             Background="LightBlue" Width="200" Height="50"  Visibility="Collapsed">
             <TextBlock Text="Clear State" TextAlignment="Center" Margin="0,15,0,0" Visibility="Collapsed"/>
         </Grid>
-        <Grid x:ConnectionId='6' Grid.Column="1"  AllowDrop="True"                                              Background="LightGray" Width="200" Height="50" Visibility="Collapsed" >
+        <Grid x:ConnectionId='5' Grid.Column="1"  AllowDrop="True"                                              Background="LightGray" Width="200" Height="50" Visibility="Collapsed" >
             <TextBlock Text="Delete" TextAlignment="Center"  Margin="0,15,0,0" Visibility="Collapsed"/>
         </Grid>
-        <Grid x:ConnectionId='7' Name="MainGrid5" Grid.Column="1" Grid.Row="0"  >
-            <TextBlock x:ConnectionId='8' Name="txtresult" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="400" Visibility="Collapsed"/>
+        <Grid x:ConnectionId='6' Name="MainGrid5" Grid.Column="1" Grid.Row="0"  >
+            <TextBlock x:ConnectionId='7' Name="txtresult" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" Height="400" Visibility="Collapsed"/>
         </Grid>
 
 

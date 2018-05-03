@@ -11,9 +11,8 @@ namespace signedUWP
     public class Users : INotifyPropertyChanged
     {
 
-        public int Id { get; set; }
 
-        public string VisitorId { get; set; }
+        public int VisitorId { get; set; }
 
         public string Name { get; set; }
 
@@ -29,6 +28,7 @@ namespace signedUWP
 
         public string TagId { get; set; }
 
+        public int EventId { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)

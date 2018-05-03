@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="400" />
+    
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -61,9 +61,10 @@
                             <TextBlock Text="Name" Width="120" FontSize="20" Foreground="DarkRed"  />
                             <TextBlock Text="Company" Width="120" FontSize="20" Foreground="DarkRed"  />
                             <TextBlock Text="Arrived" Width="120" FontSize="20" Foreground="DarkRed" />
-                            <TextBlock Text="VisitTime" Width="120" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="VisitTime" Width="160" FontSize="20" Foreground="DarkRed" />
                             <TextBlock Text="NFC id" Width="120" FontSize="20" Foreground="DarkRed" />
                             <TextBlock Text="Tag id" Width="120" FontSize="20" Foreground="DarkRed" />
+                            <TextBlock Text="Event id" Width="120" FontSize="20" Foreground="DarkRed" />
                         </StackPanel>
 
                     </DataTemplate>
@@ -73,7 +74,7 @@
                         <StackPanel Orientation="Horizontal" >
 
                             <TextBlock Name="UserId"
-                                        Text="{x:Bind Id}"
+                                        Text="{x:Bind VisitorId}"
                                         Width="40" />
                             <TextBlock Name="UserName"
                                         Text="{x:Bind Name}"
@@ -85,16 +86,19 @@
 
                             <TextBlock  Name="Arrived"
                                         Text="{x:Bind Arrived}"           
-                                        Width="120" />
+                                        Width="110" />
 
                             <TextBlock  Name="Visittime"
                                         Text="{x:Bind UpdateTime}"
-                                       Width="120" />
+                                       Width="170" />
                             <TextBlock  Name="TagID"
                                         Text="{x:Bind NFCid}"
                                         Width="120" />
                             <TextBlock  Name="TagId"
                                         Text="{x:Bind TagId}"
+                                        Width="150" />
+                            <TextBlock  Name="EventId"
+                                        Text="{x:Bind EventId}"
                                         Width="150" />
                         </StackPanel>
                     </DataTemplate>
@@ -109,22 +113,30 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50"  HorizontalAlignment="Left">
+                <Button Content="Reset"  Background="LightBlue" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="restate_Click" Width="100" Height="50"/>
+            </Grid>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50" >
+                <Button Content="Delete"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="delete_Click" Width="100" Height="50"/>
+            </Grid>
+            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="100" Height="50" HorizontalAlignment="Right">
+                <Button Content="Delete All"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="deleteall_Click" Width="100" Height="50"/>
+            </Grid>
+            <Grid Name="MainGrid4" Grid.Column="3" Grid.Row="1" >
+                <StackPanel Padding="10" Margin="0,0,0,0" Orientation="Horizontal">
 
-            <Grid Grid.Column="1" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button Content="Restate"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="restate_Click" Width="200" Height="50"/>
-            </Grid>
-            <Grid Grid.Column="2" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button Content="Delete"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="delete_Click" Width="200" Height="50"/>
-            </Grid>
-            <Grid Grid.Column="3" AllowDrop="True"   Background="LightBlue" Width="200" Height="50" >
-                <Button Content="Delete All"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="deleteall_Click" Width="200" Height="50"/>
-            </Grid>
+                    <AppBarButton Name="appbarButton7" Icon="Import" Label="Import CSV" Click="btnopenfile_Click"  Width="100" Height="55"  Background="LightBlue" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+                    <AppBarButton Name="appbarButton6" Icon="Save" Label="Save 2 History" Click="ExportButton_Click"  Width="100"  Background="LightBlue" Margin="40,0,0,0"/>
 
+                </StackPanel>
+            </Grid>
         </Grid>
 
-        <Grid Name="MainGrid4" Grid.Column="1" Grid.Row="1"  >
-            <Button Content="Import CSV"  Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="btnopenfile_Click" Width="200" Height="50"/>
-        </Grid>
+     
         <Grid Grid.Column="1" AllowDrop="True"   DragOver="Grid_DragOver" Drop="Grid_Drop" Background="LightBlue" Width="200" Height="50"  Visibility="Collapsed">
             <TextBlock Text="Clear State" TextAlignment="Center" Margin="0,15,0,0" Visibility="Collapsed"/>
         </Grid>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApplication2201802_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Event_Profile">
+    <Key>
+      <PropertyRef Name="eventID" />
+    </Key>
+    <Property Name="eventID" Type="int" Nullable="false" />
+    <Property Name="EventName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="History_Visitor_Detail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+    <Property Name="VisitorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitorCompany" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Arrived" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitTime" Type="datetime" />
+    <Property Name="PhotoUrl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tag_Profile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TagName" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+    <Property Name="NfcId" Type="bigint" />
+    <Property Name="TagId" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Visitors_Photo">
+    <Key>
+      <PropertyRef Name="PhotoId" />
+    </Key>
+    <Property Name="PhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhotoName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhotoUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visitors_Profile">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Name="VisitorId" Type="int" Nullable="false" />
+    <Property Name="VisitorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="VisitorCompany" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Arrived" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitTime" Type="datetime" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="NFCid" Type="bigint" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WebApplication2201802_dbModelStoreContainer">
+    <EntitySet Name="Event_Profile" EntityType="Self.Event_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History_Visitor_Detail" EntityType="Self.History_Visitor_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag_Profile" EntityType="Self.Tag_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitors_Photo" EntityType="Self.Visitors_Photo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitors_Profile" EntityType="Self.Visitors_Profile" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

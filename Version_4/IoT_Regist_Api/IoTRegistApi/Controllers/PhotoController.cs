@@ -53,5 +53,57 @@ namespace IoTRegistApi.Controllers
                 }
             }
         }
+        [HttpDelete]
+        public IHttpActionResult Delete(Int32 ID)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Content(HttpStatusCode.BadRequest, "Invald Delete data.");
+            }
+            else
+            {
+                try
+                {
+                    PhotoModel model = new PhotoModel();
+                    Registration_dbEntities dbEntity = new Registration_dbEntities();
+                    Visitors_Photo e = dbEntity.Visitors_Photo.Find(ID);
+                    Debug.WriteLine("-------------" + e.PhotoId);
+                    model.Delete(ID);
+                    Debug.WriteLine("Delete success");
+
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    return Content(HttpStatusCode.InternalServerError, "Clear fail.");
+                }
+            }
+
         }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteAll()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Content(HttpStatusCode.BadRequest, "Invald Delete data.");
+            }
+            else
+            {
+                try
+                {
+                    PhotoModel model = new PhotoModel();
+                    model.DeleteAll();
+                    Debug.WriteLine("Delete success");
+
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    return Content(HttpStatusCode.InternalServerError, "Clear fail.");
+                }
+            }
+
+        }
+    }
 }

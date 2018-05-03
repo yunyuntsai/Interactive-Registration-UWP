@@ -157,9 +157,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="RegistModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegistModel.edmx</DependentUpon>
+      <LastGenOutput>RegistModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RegistModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RegistModel.edmx</DependentUpon>
+      <LastGenOutput>RegistModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\IoTRegistApi - Web Deploy.pubxml" />
+    <EntityDeploy Include="RegistModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RegistModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RegistModel.edmx.diagram">
+      <DependentUpon>RegistModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -169,16 +186,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="VisitorModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VisitorModel.edmx</DependentUpon>
-      <LastGenOutput>VisitorModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="VisitorModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VisitorModel.edmx</DependentUpon>
-      <LastGenOutput>VisitorModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -189,38 +196,50 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClearController.cs" />
     <Compile Include="Controllers\DeleteController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\historyController.cs" />
     <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Event_Profile.cs">
+      <DependentUpon>RegistModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="History_Visitor_Detail.cs">
+      <DependentUpon>RegistModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\GroupModel.cs" />
+    <Compile Include="Models\historyModel.cs" />
     <Compile Include="Models\PhotoModel.cs" />
     <Compile Include="Models\VisitorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Tag_Profile.cs">
-      <DependentUpon>VisitorModel.tt</DependentUpon>
+      <DependentUpon>RegistModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VisitorModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisitorModel.Context.tt</DependentUpon>
+    <Compile Include="Visitors_Photo.cs">
+      <DependentUpon>RegistModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VisitorModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisitorModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VisitorModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisitorModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Visitor_Photo.cs">
-      <DependentUpon>VisitorModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Visitor_Profile.cs">
-      <DependentUpon>VisitorModel.tt</DependentUpon>
+    <Compile Include="Visitors_Profile.cs">
+      <DependentUpon>RegistModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -236,13 +255,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <EntityDeploy Include="VisitorModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>VisitorModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="VisitorModel.edmx.diagram">
-      <DependentUpon>VisitorModel.edmx</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

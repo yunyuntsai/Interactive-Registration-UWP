@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WebApplication2201802_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Event_Profile">
+          <Key>
+            <PropertyRef Name="eventID" />
+          </Key>
+          <Property Name="eventID" Type="int" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EventType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History_Visitor_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VisitorId" Type="int" Nullable="false" />
+          <Property Name="VisitorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VisitorCompany" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Arrived" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VisitTime" Type="datetime" />
+          <Property Name="PhotoUrl" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tag_Profile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TagName" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+          <Property Name="NfcId" Type="bigint" />
+          <Property Name="TagId" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Visitors_Photo">
+          <Key>
+            <PropertyRef Name="PhotoId" />
+          </Key>
+          <Property Name="PhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhotoName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhotoUrl" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VisitorId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visitors_Profile">
+          <Key>
+            <PropertyRef Name="VisitorId" />
+          </Key>
+          <Property Name="VisitorId" Type="int" Nullable="false" />
+          <Property Name="VisitorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="VisitorCompany" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Arrived" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VisitTime" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="NFCid" Type="bigint" Nullable="false" />
+          <Property Name="EventId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WebApplication2201802_dbModelStoreContainer">
+          <EntitySet Name="Event_Profile" EntityType="Self.Event_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History_Visitor_Detail" EntityType="Self.History_Visitor_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag_Profile" EntityType="Self.Tag_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visitors_Photo" EntityType="Self.Visitors_Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visitors_Profile" EntityType="Self.Visitors_Profile" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebApplication2201802_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tag_Profile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TagName" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="NfcId" Type="Int64" />
+          <Property Name="TagId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Visitors_Profile">
+          <Key>
+            <PropertyRef Name="VisitorId" />
+          </Key>
+          <Property Name="VisitorName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VisitorCompany" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Arrived" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VisitTime" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EventId" Type="Int32" Nullable="false" />
+          <Property Name="NFCid" Type="Int64" Nullable="false" />
+          <Property Name="VisitorId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visitors_Photo">
+          <Key>
+            <PropertyRef Name="PhotoId" />
+          </Key>
+          <Property Name="PhotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhotoUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VisitorId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Registration_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tag_Profile" EntityType="Self.Tag_Profile" />
+          <EntitySet Name="Visitors_Profile" EntityType="Self.Visitors_Profile" />
+          <EntitySet Name="Visitors_Photo" EntityType="Self.Visitors_Photo" />
+          <EntitySet Name="Event_ProfileSet" EntityType="WebApplication2201802_dbModel.Event_Profile" />
+          <EntitySet Name="History_Visitor_Detail" EntityType="WebApplication2201802_dbModel.History_Visitor_Detail" />
+        </EntityContainer>
+        <EntityType Name="Event_Profile">
+          <Key>
+            <PropertyRef Name="eventID" />
+          </Key>
+          <Property Name="eventID" Type="Int32" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EventType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="History_Visitor_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VisitorId" Type="Int32" Nullable="false" />
+          <Property Name="VisitorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VisitorCompany" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Arrived" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VisitTime" Type="DateTime" Precision="3" Nullable="true" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="PhotoUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebApplication2201802_dbModelStoreContainer" CdmEntityContainer="Registration_dbEntities">
+          <EntitySetMapping Name="Tag_Profile">
+            <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Tag_Profile">
+              <MappingFragment StoreEntitySet="Tag_Profile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+                <ScalarProperty Name="NfcId" ColumnName="NfcId" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors_Profile">
+            <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Visitors_Profile">
+              <MappingFragment StoreEntitySet="Visitors_Profile">
+                <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+                <ScalarProperty Name="NFCid" ColumnName="NFCid" />
+                <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+                <ScalarProperty Name="VisitorCompany" ColumnName="VisitorCompany" />
+                <ScalarProperty Name="Arrived" ColumnName="Arrived" />
+                <ScalarProperty Name="VisitTime" ColumnName="VisitTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors_Photo">
+            <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Visitors_Photo">
+              <MappingFragment StoreEntitySet="Visitors_Photo">
+                <ScalarProperty Name="PhotoId" ColumnName="PhotoId" />
+                <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+                <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_ProfileSet">
+            <EntityTypeMapping TypeName="WebApplication2201802_dbModel.Event_Profile">
+              <MappingFragment StoreEntitySet="Event_Profile">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="eventID" ColumnName="eventID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History_Visitor_Detail">
+            <EntityTypeMapping TypeName="WebApplication2201802_dbModel.History_Visitor_Detail">
+              <MappingFragment StoreEntitySet="History_Visitor_Detail">
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="VisitTime" ColumnName="VisitTime" />
+                <ScalarProperty Name="Arrived" ColumnName="Arrived" />
+                <ScalarProperty Name="VisitorCompany" ColumnName="VisitorCompany" />
+                <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+                <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" />
-  <setAcl path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_3\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Regist_Api\IoTRegistApi\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>

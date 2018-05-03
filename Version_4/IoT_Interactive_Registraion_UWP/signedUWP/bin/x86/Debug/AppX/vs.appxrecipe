@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-23T10:17:15.466</Modified>
+      <Modified>2018-05-03T04:36:33.694</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Debug\signedUWP.exe">
       <PackagePath>entrypoint\signedUWP.exe</PackagePath>
-      <Modified>2018-04-23T10:17:12.609</Modified>
+      <Modified>2018-05-03T04:36:31.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\v-altsai\.nuget\packages\fontawesome.uwp\4.7.0.9\lib\uap10.0\FontAwesome.UWP.dll">
       <PackagePath>FontAwesome.UWP.dll</PackagePath>
@@ -887,7 +887,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Debug\signedUWP.xr.xml">
       <PackagePath>signedUWP.xr.xml</PackagePath>
-      <Modified>2018-04-23T09:02:46.078</Modified>
+      <Modified>2018-05-02T02:58:46.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -908,11 +908,11 @@
     <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-23T10:17:14.071</Modified>
+      <Modified>2018-05-03T04:36:32.628</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Github\IoTCenter-Disneyland\Digital Signature - Uwp\Version_4\IoT_Interactive_Registraion_UWP\signedUWP\bin\x86\Debug\Core\signedUWP.exe">
       <PackagePath>signedUWP.exe</PackagePath>
-      <Modified>2018-04-23T10:17:15.451</Modified>
+      <Modified>2018-05-03T04:36:33.678</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

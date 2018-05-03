@@ -204,43 +204,39 @@ namespace signedUWP.signedUWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[15];
             _typeNameTable[0] = "signedUWP.AboutPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "FontAwesome.UWP.FontAwesome";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.FontIcon";
-            _typeNameTable[5] = "FontAwesome.UWP.FontAwesomeIcon";
-            _typeNameTable[6] = "System.Enum";
-            _typeNameTable[7] = "System.ValueType";
-            _typeNameTable[8] = "Object";
-            _typeNameTable[9] = "signedUWP.AddVisitorPage";
-            _typeNameTable[10] = "Windows.ApplicationModel.Contacts.Contact";
-            _typeNameTable[11] = "signedUWP.MainPage";
-            _typeNameTable[12] = "signedUWP.OrderPage";
-            _typeNameTable[13] = "signedUWP.RegisterPage";
-            _typeNameTable[14] = "signedUWP.ScanPage";
-            _typeNameTable[15] = "signedUWP.UserPage";
-            _typeNameTable[16] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[3] = "signedUWP.MainPage";
+            _typeNameTable[4] = "signedUWP.OrderPage";
+            _typeNameTable[5] = "FontAwesome.UWP.FontAwesome";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.FontIcon";
+            _typeNameTable[7] = "FontAwesome.UWP.FontAwesomeIcon";
+            _typeNameTable[8] = "System.Enum";
+            _typeNameTable[9] = "System.ValueType";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "signedUWP.RegisterPage";
+            _typeNameTable[12] = "Windows.ApplicationModel.Contacts.Contact";
+            _typeNameTable[13] = "signedUWP.UserPage";
+            _typeNameTable[14] = "Windows.UI.Xaml.Media.ImageSource";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[15];
             _typeTable[0] = typeof(global::signedUWP.AboutPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::FontAwesome.UWP.FontAwesome);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.FontIcon);
-            _typeTable[5] = typeof(global::FontAwesome.UWP.FontAwesomeIcon);
-            _typeTable[6] = typeof(global::System.Enum);
-            _typeTable[7] = typeof(global::System.ValueType);
-            _typeTable[8] = typeof(global::System.Object);
-            _typeTable[9] = typeof(global::signedUWP.AddVisitorPage);
-            _typeTable[10] = typeof(global::Windows.ApplicationModel.Contacts.Contact);
-            _typeTable[11] = typeof(global::signedUWP.MainPage);
-            _typeTable[12] = typeof(global::signedUWP.OrderPage);
-            _typeTable[13] = typeof(global::signedUWP.RegisterPage);
-            _typeTable[14] = typeof(global::signedUWP.ScanPage);
-            _typeTable[15] = typeof(global::signedUWP.UserPage);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[3] = typeof(global::signedUWP.MainPage);
+            _typeTable[4] = typeof(global::signedUWP.OrderPage);
+            _typeTable[5] = typeof(global::FontAwesome.UWP.FontAwesome);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.FontIcon);
+            _typeTable[7] = typeof(global::FontAwesome.UWP.FontAwesomeIcon);
+            _typeTable[8] = typeof(global::System.Enum);
+            _typeTable[9] = typeof(global::System.ValueType);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::signedUWP.RegisterPage);
+            _typeTable[12] = typeof(global::Windows.ApplicationModel.Contacts.Contact);
+            _typeTable[13] = typeof(global::signedUWP.UserPage);
+            _typeTable[14] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -276,14 +272,12 @@ namespace signedUWP.signedUWP_XamlTypeInfo
         }
 
         private object Activate_0_AboutPage() { return new global::signedUWP.AboutPage(); }
-        private object Activate_3_FontAwesome() { return new global::FontAwesome.UWP.FontAwesome(); }
-        private object Activate_9_AddVisitorPage() { return new global::signedUWP.AddVisitorPage(); }
-        private object Activate_10_Contact() { return new global::Windows.ApplicationModel.Contacts.Contact(); }
-        private object Activate_11_MainPage() { return new global::signedUWP.MainPage(); }
-        private object Activate_12_OrderPage() { return new global::signedUWP.OrderPage(); }
-        private object Activate_13_RegisterPage() { return new global::signedUWP.RegisterPage(); }
-        private object Activate_14_ScanPage() { return new global::signedUWP.ScanPage(); }
-        private object Activate_15_UserPage() { return new global::signedUWP.UserPage(); }
+        private object Activate_3_MainPage() { return new global::signedUWP.MainPage(); }
+        private object Activate_4_OrderPage() { return new global::signedUWP.OrderPage(); }
+        private object Activate_5_FontAwesome() { return new global::FontAwesome.UWP.FontAwesome(); }
+        private object Activate_11_RegisterPage() { return new global::signedUWP.RegisterPage(); }
+        private object Activate_12_Contact() { return new global::Windows.ApplicationModel.Contacts.Contact(); }
+        private object Activate_13_UserPage() { return new global::signedUWP.UserPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -310,18 +304,32 @@ namespace signedUWP.signedUWP_XamlTypeInfo
                 xamlType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  FontAwesome.UWP.FontAwesome
+            case 3:   //  signedUWP.MainPage
+                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  signedUWP.OrderPage
+                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_OrderPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  FontAwesome.UWP.FontAwesome
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.FontIcon"));
-                userType.Activator = Activate_3_FontAwesome;
+                userType.Activator = Activate_5_FontAwesome;
                 userType.AddMemberName("Icon");
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.FontIcon
+            case 6:   //  Windows.UI.Xaml.Controls.FontIcon
                 xamlType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  FontAwesome.UWP.FontAwesomeIcon
+            case 7:   //  FontAwesome.UWP.FontAwesomeIcon
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::FontAwesome.UWP.FontAwesomeIcon.None);
                 userType.AddEnumValue("Glass", global::FontAwesome.UWP.FontAwesomeIcon.Glass);
@@ -1113,72 +1121,43 @@ namespace signedUWP.signedUWP_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 6:   //  System.Enum
+            case 8:   //  System.Enum
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 7:   //  System.ValueType
+            case 9:   //  System.ValueType
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 8:   //  Object
+            case 10:   //  Object
                 xamlType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  signedUWP.AddVisitorPage
+            case 11:   //  signedUWP.RegisterPage
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_AddVisitorPage;
+                userType.Activator = Activate_11_RegisterPage;
                 userType.AddMemberName("CurrentContact");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Windows.ApplicationModel.Contacts.Contact
+            case 12:   //  Windows.ApplicationModel.Contacts.Contact
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 11:   //  signedUWP.MainPage
+            case 13:   //  signedUWP.UserPage
                 userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 12:   //  signedUWP.OrderPage
-                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_OrderPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 13:   //  signedUWP.RegisterPage
-                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_RegisterPage;
-                userType.AddMemberName("CurrentContact");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 14:   //  signedUWP.ScanPage
-                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_ScanPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 15:   //  signedUWP.UserPage
-                userType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_UserPage;
+                userType.Activator = Activate_13_UserPage;
                 userType.AddMemberName("MainImage");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  Windows.UI.Xaml.Media.ImageSource
+            case 14:   //  Windows.UI.Xaml.Media.ImageSource
                 xamlType = new global::signedUWP.signedUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1250,32 +1229,22 @@ namespace signedUWP.signedUWP_XamlTypeInfo
             var that = (global::FontAwesome.UWP.FontAwesome)instance;
             that.Icon = (global::FontAwesome.UWP.FontAwesomeIcon)Value;
         }
-        private object get_1_AddVisitorPage_CurrentContact(object instance)
-        {
-            var that = (global::signedUWP.AddVisitorPage)instance;
-            return that.CurrentContact;
-        }
-        private void set_1_AddVisitorPage_CurrentContact(object instance, object Value)
-        {
-            var that = (global::signedUWP.AddVisitorPage)instance;
-            that.CurrentContact = (global::Windows.ApplicationModel.Contacts.Contact)Value;
-        }
-        private object get_2_RegisterPage_CurrentContact(object instance)
+        private object get_1_RegisterPage_CurrentContact(object instance)
         {
             var that = (global::signedUWP.RegisterPage)instance;
             return that.CurrentContact;
         }
-        private void set_2_RegisterPage_CurrentContact(object instance, object Value)
+        private void set_1_RegisterPage_CurrentContact(object instance, object Value)
         {
             var that = (global::signedUWP.RegisterPage)instance;
             that.CurrentContact = (global::Windows.ApplicationModel.Contacts.Contact)Value;
         }
-        private object get_3_UserPage_MainImage(object instance)
+        private object get_2_UserPage_MainImage(object instance)
         {
             var that = (global::signedUWP.UserPage)instance;
             return that.MainImage;
         }
-        private void set_3_UserPage_MainImage(object instance, object Value)
+        private void set_2_UserPage_MainImage(object instance, object Value)
         {
             var that = (global::signedUWP.UserPage)instance;
             that.MainImage = (global::Windows.UI.Xaml.Media.ImageSource)Value;
@@ -1295,23 +1264,17 @@ namespace signedUWP.signedUWP_XamlTypeInfo
                 xamlMember.Getter = get_0_FontAwesome_Icon;
                 xamlMember.Setter = set_0_FontAwesome_Icon;
                 break;
-            case "signedUWP.AddVisitorPage.CurrentContact":
-                userType = (global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("signedUWP.AddVisitorPage");
-                xamlMember = new global::signedUWP.signedUWP_XamlTypeInfo.XamlMember(this, "CurrentContact", "Windows.ApplicationModel.Contacts.Contact");
-                xamlMember.Getter = get_1_AddVisitorPage_CurrentContact;
-                xamlMember.Setter = set_1_AddVisitorPage_CurrentContact;
-                break;
             case "signedUWP.RegisterPage.CurrentContact":
                 userType = (global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("signedUWP.RegisterPage");
                 xamlMember = new global::signedUWP.signedUWP_XamlTypeInfo.XamlMember(this, "CurrentContact", "Windows.ApplicationModel.Contacts.Contact");
-                xamlMember.Getter = get_2_RegisterPage_CurrentContact;
-                xamlMember.Setter = set_2_RegisterPage_CurrentContact;
+                xamlMember.Getter = get_1_RegisterPage_CurrentContact;
+                xamlMember.Setter = set_1_RegisterPage_CurrentContact;
                 break;
             case "signedUWP.UserPage.MainImage":
                 userType = (global::signedUWP.signedUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("signedUWP.UserPage");
                 xamlMember = new global::signedUWP.signedUWP_XamlTypeInfo.XamlMember(this, "MainImage", "Windows.UI.Xaml.Media.ImageSource");
-                xamlMember.Getter = get_3_UserPage_MainImage;
-                xamlMember.Setter = set_3_UserPage_MainImage;
+                xamlMember.Getter = get_2_UserPage_MainImage;
+                xamlMember.Setter = set_2_UserPage_MainImage;
                 break;
             }
             return xamlMember;

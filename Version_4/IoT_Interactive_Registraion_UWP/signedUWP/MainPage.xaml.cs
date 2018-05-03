@@ -96,9 +96,6 @@ namespace signedUWP
                         ContentFrame.Navigate(typeof(RegisterPage));
                         break;
 
-                    case "AddVisitor":
-                        ContentFrame.Navigate(typeof(AddVisitorPage));
-                        break;
 
                     case "Users":
                         var dateToFormat = System.DateTime.Now;
@@ -116,7 +113,7 @@ namespace signedUWP
                         ContentFrame.Navigate(typeof(UserPage));
                         break;
 
-                    case "Orders":
+                    case "Lists":
                         NavView.Header = "    物聯網創新中心";
                         
                         ContentFrame.Navigate(typeof(OrderPage));

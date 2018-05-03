@@ -23,8 +23,8 @@ namespace IoTRegistApi.Controllers
                 try
                 {
                     VisitorModel model = new VisitorModel();
-                    WebApplication2201802_dbEntities1 dbEntity = new WebApplication2201802_dbEntities1();
-                    Visitor_Profile user = dbEntity.Visitor_Profile.Find(ID);
+                    Registration_dbEntities dbEntity = new Registration_dbEntities();
+                    Visitors_Profile user = dbEntity.Visitors_Profile.Find(ID);
                     Debug.WriteLine("-------------" + user.VisitorName);
                     model.Delete(ID);
                     Debug.WriteLine("Delete success");

@@ -12,5 +12,8 @@ namespace signedUWP
         [JsonProperty("transactions")]
         public List<Users> transactions { get; set; }
 
+        [JsonProperty("transactions")]
+        public List<Events> Transactions1 { get; set; }
+
     }
 }

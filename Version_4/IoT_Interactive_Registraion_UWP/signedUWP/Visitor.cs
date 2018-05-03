@@ -8,12 +8,14 @@ namespace signedUWP
 {
     class Visitor
     {
-        public int Id { get; set; }
+        public int VisitorId { get; set; }
 
         public string VisitorName { get; set; }
 
         public string VisitorCompany { get; set; }
 
         public string Arrived { get; set; }
+
+        public int EventId { get; set; }
     }
 }

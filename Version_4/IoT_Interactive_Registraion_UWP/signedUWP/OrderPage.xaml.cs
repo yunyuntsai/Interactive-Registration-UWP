@@ -45,6 +45,8 @@ namespace signedUWP
 
         ObservableCollection<object> data1 = new ObservableCollection<object> { };
 
+        string _PhotoUrl;
+        string _updatetime;
         public static List<Dictionary<string, string>> DerivedData
         {
             get
@@ -121,7 +123,8 @@ namespace signedUWP
                             {
                                 if (u[i].Arrived == "Yes")
                                 {
-                                    string time1 = u[i].UpdateTime.Substring(11, 5);
+                                    //string time1 = u[i].UpdateTime.Substring(11, 5);
+                                    string time1 = u[i].UpdateTime;
                                     u[i].UpdateTime = time1;
                                     Debug.WriteLine(u[i].UpdateTime);
 
@@ -155,6 +158,71 @@ namespace signedUWP
             
             if (nu!=null) return nu;
             else return empty;
+        }
+
+        private async Task<PhotoList> LoadPhotoList()
+        {
+
+            //Create an HTTP client object
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            String baseAPIUrl = "http://webapplication2201802.azurewebsites.net/";
+            String baseAPIUrl2 = "http://iotregistapi.azurewebsites.net/";
+
+            PhotoList ph = new PhotoList();
+            PhotoList empty = new PhotoList();
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                Debug.WriteLine("Connect Http Client");
+                client.BaseAddress = new Uri(baseAPIUrl2);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync(baseAPIUrl2 + "api/Photo/");
+                Debug.WriteLine(response);
+                string httpResponseBody = "";
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Response Success!!!");
+                    httpResponseBody = await response.Content.ReadAsStringAsync();
+
+                    if (httpResponseBody.ToString() != "[]")
+                    {
+                        //var outObject = JsonConvert.DeserializeObject<Users>(s);
+                        //string body = httpResponseBody.Trim(new Char[] { '[', ']' });
+                        Photo p = new Photo();
+                        //TextBlock2.Text = "Result: "; //+ httpResponseBody;
+                        PhotoList pp = DataHelper.GetPhotos(httpResponseBody);
+
+                        if (pp.Count > 0)
+                        {
+                            for (int i = 0; i < pp.Count; i++)
+                            {
+                                ph.Add(pp[i]);
+                                Debug.WriteLine(pp[i].PhotoId);
+                            }
+                            return ph;
+                        }
+
+                       
+                        Debug.WriteLine(httpResponseBody);
+                    }
+                    try
+                    {
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e);
+                    }
+                    //var result  =JsonConvert.DeserializeObject<Users>(httpResponseBody);
+                    //user.UserID = result.UserID;
+                    //user.UserName = result.UserName;
+
+                
+                }
+            }
+
+            if (ph != null) return ph;
+            else return ph;
         }
 
         public async Task ClearAsync(string UserId)
@@ -204,9 +272,9 @@ namespace signedUWP
             if (InventoryList.SelectedItem != null)
             {
                 var users = (Users)InventoryList.SelectedItem;
-                e.Data.SetText(users.Id.ToString());
-                Debug.WriteLine(users.Id.ToString());
-                ClearAsync(users.Id.ToString());
+                e.Data.SetText(users.VisitorId.ToString());
+                Debug.WriteLine(users.VisitorId.ToString());
+                ClearAsync(users.VisitorId.ToString());
                 Task.Delay(2000);
                 LoadUserList();
             }
@@ -219,9 +287,9 @@ namespace signedUWP
             if (InventoryList.SelectedItem != null)
             {
                 var users = (Users)InventoryList.SelectedItem;
-                e.Data.SetText(users.Id.ToString());
-                Debug.WriteLine(users.Id.ToString());
-                DeleteAsync(users.Id.ToString());
+                e.Data.SetText(users.VisitorId.ToString());
+                Debug.WriteLine(users.VisitorId.ToString());
+                DeleteAsync(users.VisitorId.ToString());
                 Task.Delay(2000);
                 LoadUserList();
             }
@@ -245,7 +313,7 @@ namespace signedUWP
                 if (InventoryList.SelectedItem != null)
                 {
                     var users = (Users)InventoryList.SelectedItem;
-                    e.Data.SetText(users.Id.ToString());
+                    e.Data.SetText(users.VisitorId.ToString());
                     e.Data.RequestedOperation = DataPackageOperation.Copy;
                     Debug.WriteLine(users.Name.ToString());
 
@@ -272,7 +340,7 @@ namespace signedUWP
             if (InventoryList.SelectedItem != null)
             {
                 var users = (Users)InventoryList.SelectedItem;
-                e.Data.SetText(users.Id.ToString());
+                e.Data.SetText(users.VisitorId.ToString());
                
                 
             }
@@ -296,7 +364,7 @@ namespace signedUWP
                 if (InventoryList.SelectedItem != null)
                 {
                     var users = (Users)InventoryList.SelectedItem;
-                    e.Data.SetText(users.Id.ToString());
+                    e.Data.SetText(users.VisitorId.ToString());
                     //e.Data.RequestedOperation = DataPackageOperation.Copy;
                     Debug.WriteLine("drop.........");
 
@@ -356,7 +424,7 @@ namespace signedUWP
             foreach (Users item in data1)
             {
                 Debug.WriteLine(item.Name.ToString());
-                ClearAsync(item.Id.ToString());
+                ClearAsync(item.VisitorId.ToString());
             }
             Task.Delay(3000);
             await LoadUserList();
@@ -368,7 +436,7 @@ namespace signedUWP
             foreach (Users item in data1)
             {
                 Debug.WriteLine(item.Name.ToString());
-                DeleteAsync(item.Id.ToString());
+                DeleteAsync(item.VisitorId.ToString());
             }
             Task.Delay(3000);
             await LoadUserList();
@@ -397,7 +465,7 @@ namespace signedUWP
             foreach (Users item in data1)
             {
                 Debug.WriteLine(item.Name.ToString());
-                DeleteAsync(item.Id.ToString());
+                DeleteAsync(item.VisitorId.ToString());
             }
             Task.Delay(3000);
             await LoadUserList();
@@ -407,6 +475,77 @@ namespace signedUWP
         private async void reload()
         {
             await LoadUserList();
+        }
+
+        private async void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            PhotoList pList = await LoadPhotoList();
+            UserList uList = await LoadUserList();
+
+            for (int i = 0; i < uList.Count; i++)
+            {
+                var outList = new Dictionary<string, string>();
+                StringBuilder builder = new StringBuilder();
+                _PhotoUrl = "null";
+                string ss;
+                outList.Add("VisitorId", uList[i].VisitorId.ToString());
+                outList.Add("VisitorName", uList[i].Name);
+                outList.Add("VisitorCompany", uList[i].Company);
+                outList.Add("Arrived", uList[i].Arrived);
+                if(uList[i].Arrived == "No")
+                {
+                    _PhotoUrl = "null";
+                    _updatetime = null;
+                }
+                else if(uList[i].Arrived == "Yes")
+                {
+                    _updatetime = uList[i].UpdateTime;
+                    foreach (var p in pList)
+                    {
+                        if (p.VisitorId == uList[i].VisitorId) _PhotoUrl = p.PhotoUrl;
+                        else _PhotoUrl = "null";
+                    }
+                }
+               
+                    
+                outList.Add("VisitTime", _updatetime);
+                outList.Add("PhotoUrl", _PhotoUrl);
+                outList.Add("EventID", uList[i].EventId.ToString());
+
+                foreach (var item in outList)
+                {
+
+                    if (item.Key == "VisitorId")
+                    {
+                        ss = string.Format("\"{0}\":{1}", item.Key, string.Join(",", item.Value));
+                        builder.Append(ss);
+                        builder.Append(",");
+                    }
+                    else if (item.Key == "EventID")
+                    {
+                        ss = string.Format("\"{0}\":{1}", item.Key, string.Join(",", item.Value));
+                        builder.Append(ss);
+                    }
+                    else
+                    {
+                        ss = string.Format("\"{0}\":\"{1}\"", item.Key, string.Join(",", item.Value));
+                        builder.Append(ss);
+                        builder.Append(",");
+                    }
+                }
+                string JsonString = "{" + builder + "}";
+                Debug.WriteLine(JsonString);
+                Debug.WriteLine("Post!!!!");
+                var httpClient = new HttpClient();
+                String baseAPIUrl = "http://iotregistapi.azurewebsites.net/";
+                httpClient.BaseAddress = new Uri(baseAPIUrl);
+
+                StringContent content = new System.Net.Http.StringContent(JsonString, Encoding.UTF8, "application/json");
+                var result = httpClient.PostAsync(baseAPIUrl + "api/history/", content).Result;
+                await DeleteAsync(uList[i].VisitorId.ToString());
+
+            }
+            Debug.WriteLine("Export Success!!!!");
         }
         private async void btnopenfile_Click(object sender, RoutedEventArgs e)
         {
@@ -433,26 +572,33 @@ namespace signedUWP
                             string ss;
                             foreach (var keyValue in dic)
                             {
-                                if (keyValue.Key.Contains("Id") && !keyValue.Key.Contains("VisitorId")) outList.Add(keyValue.Key, keyValue.Value);
+                                //if (keyValue.Key.Contains("Id") && !keyValue.Key.Contains("VisitorId")) outList.Add(keyValue.Key, keyValue.Value);
+                                if (keyValue.Key.Contains("VisitorId")) outList.Add(keyValue.Key, keyValue.Value);
                                 else if (keyValue.Key.Contains("VisitorName")) outList.Add(keyValue.Key, keyValue.Value);
                                 else if (keyValue.Key.Contains("VisitorCompany")) outList.Add(keyValue.Key, keyValue.Value);
                                 else if (keyValue.Key.Contains("Arrived")) outList.Add(keyValue.Key, keyValue.Value);
+                                else if (keyValue.Key.Contains("EventId")) outList.Add(keyValue.Key, keyValue.Value);
                                 else continue;
                                
                             }
                             foreach (var item in outList)
                             {
-
-                                if (item.Key == "Id")
+                                if (item.Key == "VisitorId")
+                                {
+                                    ss = string.Format("\"{0}\":{1}", item.Key, string.Join(",", item.Value));
+                                    builder.Append(ss);
+                                    builder.Append(",");
+                                }
+                                else if (item.Key == "EventID")
                                 {
                                     ss = string.Format("\"{0}\":{1}", item.Key, string.Join(",", item.Value));
                                     builder.Append(ss);
                                 }
                                 else
                                 {
-                                    builder.Append(",");
                                     ss = string.Format("\"{0}\":\"{1}\"", item.Key, string.Join(",", item.Value));
                                     builder.Append(ss);
+                                    builder.Append(",");
                                 }
                             }
                             string JsonString = "{" + builder + "}";

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75dbf151c71c4d36bdcd6e47989d12f0" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="WebApplication2201802_dbModel.Tag_Profile" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApplication2201802_dbModel.Visitors_Profile" Width="1.5" PointX="7.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApplication2201802_dbModel.Visitors_Photo" Width="1.5" PointX="5.125" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApplication2201802_dbModel.Event_Profile" Width="1.5" PointX="0.875" PointY="1.5" />
+        <EntityTypeShape EntityType="WebApplication2201802_dbModel.History_Visitor_Detail" Width="1.5" PointX="3" PointY="1.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

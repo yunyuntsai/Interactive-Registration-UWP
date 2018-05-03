@@ -521,7 +521,7 @@ namespace signedUWP
             if (InventoryList.SelectedItem != null)
             {
                 var users = (Users)InventoryList.SelectedItem;
-                e.Data.SetText(users.Id.ToString());
+                e.Data.SetText(users.VisitorId.ToString());
                 //e.Data.RequestedOperation = DataPackageOperation.Copy;
                 Debug.WriteLine(users.Name.ToString());
 
@@ -558,29 +558,7 @@ namespace signedUWP
         #endregion
 
 
-        public async Task ScanningWindow(Users u)
-        {
-            var currentAV = ApplicationView.GetForCurrentView();
-            var newAV = CoreApplication.CreateNewView();
-            await newAV.Dispatcher.RunAsync(
-                            CoreDispatcherPriority.Normal, async () =>
-                            {
-                                var newWindow = Window.Current;
-                                var newAppView = ApplicationView.GetForCurrentView();
-                                newAppView.Title = "New window";
-
-                                var frame = new Frame();
-                                frame.Navigate(typeof(ScanPage), u);
-                                newWindow.Content = frame;
-                                newWindow.Activate();
-                                
-                                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(
-                                    newAppView.Id,
-                                    ViewSizePreference.UseMinimum,
-                                    currentAV.Id,
-                                    ViewSizePreference.UseMinimum);
-                            });
-        }
+     
 
         private void TextBlock8_SelectionChanged(object sender, RoutedEventArgs e)
         {

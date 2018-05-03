@@ -49,8 +49,6 @@ namespace signedUWP
     /// </summary>
     /// 
 
-
-
     public sealed partial class RegisterPage : Page, System.ComponentModel.INotifyPropertyChanged
     {
 
@@ -66,6 +64,7 @@ namespace signedUWP
         private MediaCapture _mediaCapture;
         public string registerName = "";
         public string registorVisitorId = "";
+        public string _EventType = "";
         private int countdown;
         DispatcherTimer Timer = new DispatcherTimer();
         DispatcherTimer Timer2 = new DispatcherTimer();
@@ -76,11 +75,15 @@ namespace signedUWP
         private CameraRotationHelper _rotationHelper;
         private bool _externalCamera;
         public int _VisitorID;
+        public int _EventID;
         StorageFile userImageFile;
         BitmapImage userImage;
         private string userImagePath;
         private Windows.ApplicationModel.Contacts.Contact _currentContact;
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        private string[] Autoitems = new string[] { "Workshop", "Open House", "Meeting", "Interview", "Others", "Conference" };
+        List<string> eventList = new List<string>();
+        public string _SelectEventId;
 
         public RegisterPage()
         {
@@ -93,60 +96,31 @@ namespace signedUWP
 
         }
 
-        private void Timer_Tick(object sender, object e)
-        {
-            Time.Text = DateTime.Now.ToString("h:mm:ss tt");
-        }
-
-        //private void timer1_Tick(object sender, object e)
-        //{
-
-
-        //    Debug.WriteLine("i counter : " + counter);
-        //    if (counter == 0)
-        //    {
-        //        line1.Visibility = Visibility.Visible;
-        //        counter = 1;
-        //    }
-        //    else
-        //    {
-        //        counter--;
-        //        line1.Visibility = Visibility.Collapsed;
-        //    }
-
-        //}
-        //private void timer2_Tick(object sender, object e)
-        //{
-
-
-        //    Debug.WriteLine("o counter : " + counter2);
-        //    if (counter2 == 0)
-        //    {
-        //        line2.Visibility = Visibility.Visible;
-        //        counter2 = 1;
-        //    }
-        //    else
-        //    {
-        //        counter2--;
-        //        line2.Visibility = Visibility.Collapsed;
-        //    }
-
-        //}
-
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             var dateToFormat = System.DateTime.Now;
 
-            var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
+            var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("year month day");
             var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("hour minute");
 
             var date = dateFormatter.Format(dateToFormat);
             var time = timeFormatter.Format(dateToFormat);
 
             string output = string.Format(date) + " | " + string.Format(time);
+            Date.Text = string.Format(date)+ " | ";
+            //Read the first line of dataFile.txt in LocalFolder and store it in a String
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile sampleFile = await localFolder.CreateFileAsync("Eventfile.txt",
+                   Windows.Storage.CreationCollisionOption.ReplaceExisting);
+      
+ 
+            String fileContent = await FileIO.ReadTextAsync(sampleFile);
 
             BackToDefaultStep();
             Delay_Param = 5;
+            //Debug.WriteLine("file............."+fileContent);
+            var EventInfo = await GetEventById(fileContent);
+
             await CountUserList();
 
             //TextBlock11.Text = "1. 請以Barcode Reader掃描報到單您的條碼.\n2. 請隨機領取UWB Tag一張，並以NFC Reader感應.\n3. 配對開通完成.";
@@ -156,6 +130,13 @@ namespace signedUWP
             }
         }
 
+        //Clock
+        private void Timer_Tick(object sender, object e)
+        {
+            Time.Text =  DateTime.Now.ToString("h:mm:ss tt");
+        }
+
+        //Step1 : Enter BarCodeID
         private async void OnKeyDownHandler(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
@@ -176,6 +157,7 @@ namespace signedUWP
             }
         }
 
+        //Step2 : Enter UWB TagID
         private async void UwbIdKeyDownHandler(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
@@ -189,6 +171,39 @@ namespace signedUWP
                 //TextBlock1.Text = textBox1.Text;
                 //Check2.Visibility = Visibility.Collapsed;
             }
+        }
+
+        //Step3 : Return to Initial step
+        private async void BackToDefaultStep()
+        {
+            step1Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Barcode;
+            step1ColorStoryboard.Begin();
+
+            step2Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Tags;
+            step2ColorStoryboard.Stop();
+
+            step3Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
+            step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.ThumbsUp;
+            step3ColorStoryboard.Stop();
+
+
+            registerNo.Text = String.Empty;
+            registerNo.Visibility = Visibility.Visible;
+            registerNoText.Text = String.Empty;
+            registerNoText.Visibility = Visibility.Collapsed;
+
+            displayName.Text = "-";
+
+            regiserUwbId.Text = String.Empty;
+            regiserUwbId.Visibility = Visibility.Collapsed;
+            regiserUwbIdText.Text = String.Empty;
+            regiserUwbIdText.Visibility = Visibility.Collapsed;
+
+            PopUpWidget.IsOpen = false;
+            CurrentContact = await CreateDefaultContact();
+            registerNo.Focus(FocusState.Programmatic);
         }
 
         // Step1: Visitor Check In
@@ -217,6 +232,7 @@ namespace signedUWP
             popUpDisplayText2.Text = "Do you want to take a picture for badge?";
 
         }
+
         // Step2: Visitor Binding Uwb and BarCode
         private async void visitorUwbBinding()
         {
@@ -254,6 +270,7 @@ namespace signedUWP
             BackToDefaultStep();
         }
 
+        // Update GIPS api
         private async Task UpdateUwbTag(string TagSerialnum, string registerName)
         {
             Debug.WriteLine("Update uwb tag .....");
@@ -278,6 +295,7 @@ namespace signedUWP
             }
         }
 
+        //Post uwb tag to dbo.visitor_profile
         public async Task PostAsync(string UserId, string ScanId)
         {
             Debug.WriteLine("Post!!!!");
@@ -293,6 +311,7 @@ namespace signedUWP
 
         }
 
+        //Post the visitor photo to dbo.visitor_photo
         public async Task PostPhotoAsync(string url)
         {
             Debug.WriteLine("Post Photo!!!!");
@@ -301,13 +320,14 @@ namespace signedUWP
 
             httpClient.BaseAddress = new Uri(baseAPIUrl2);
 
-            var json = "{\"PhotoId\":" + registorVisitorId  +",\"PhotoUrl\":\"" +url + "\",\"PhotoName\":\"" + registerName + "\",\"VisitorId\":" + registorVisitorId+ "}";
+            var json = "{\"PhotoName\":\"" + registerName + "\",\"PhotoUrl\":\"" + url + "\",\"VisitorId\":" + registorVisitorId+ "}";
             Debug.WriteLine(json);
             StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
             var result = httpClient.PostAsync(baseAPIUrl2 + "api/Photo" , content).Result;
 
         }
 
+        //Get visitor profile bu visitor ID
         private async Task<dynamic> GetUsersDetailInfoAsync(String id)
         {
 
@@ -338,7 +358,7 @@ namespace signedUWP
                     try
                     {
                         var dyn = JsonConvert.DeserializeObject<JObject>(body);
-                        JProperty propId = dyn.Properties().FirstOrDefault(i => i.Name == "Id");
+                        JProperty propId = dyn.Properties().FirstOrDefault(i => i.Name == "VisitorId");
                         JProperty propName = dyn.Properties().FirstOrDefault(i => i.Name == "Name");
                         JProperty propSerialnum = dyn.Properties().FirstOrDefault(i => i.Name == "TagId");
                         JProperty propTime = dyn.Properties().FirstOrDefault(i => i.Name == "UpdateTime");
@@ -373,6 +393,72 @@ namespace signedUWP
 
         }
 
+        //Get visitor profile bu visitor ID
+        private async Task<dynamic> GetEventById(String id)
+        {
+
+            string EventName = null;
+
+            //Create an HTTP client object
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            String baseAPIUrl2 = "http://iotregistapi.azurewebsites.net/";
+
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                Debug.WriteLine("Connect Http Client");
+                client.BaseAddress = new Uri(baseAPIUrl2);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.GetAsync(baseAPIUrl2 + "api/Event/" + id);
+                Debug.WriteLine(response);
+                string httpResponseBody = "";
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Response Success!!!");
+                    httpResponseBody = await response.Content.ReadAsStringAsync();
+                    string body = httpResponseBody.Trim(new Char[] { '[', ']' });
+                    Events events = new Events();
+
+                    Debug.WriteLine(body);
+                    try
+                    {
+                        var dyn = JsonConvert.DeserializeObject<JObject>(body);
+                        JProperty propId = dyn.Properties().FirstOrDefault(i => i.Name == "EventId");
+                        JProperty propName = dyn.Properties().FirstOrDefault(i => i.Name == "EventName");
+
+                        if (propName != null)
+                        {
+
+                            dynamic EventInfo = new JObject();
+
+                            EventInfo.EventName = propName.Value.ToString();
+                            EventInfo.ID = propId.Value.ToString();
+
+                            EventName = propName.Value.ToString();
+                            EventNameText.Text = " "+propName.Value.ToString();
+                            Debug.WriteLine(EventName);
+
+
+                            return EventInfo;
+
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(e);
+                        return "error";
+                    }
+
+
+                }
+                return "error";
+            }
+
+
+        }
+
+        //Get the list of all visitors
         private async Task<UserList> CountUserList()
         {
 
@@ -437,6 +523,52 @@ namespace signedUWP
             return null;
         }
 
+        //Get the list of all visitors
+        private async Task<EventList> GetEventList()
+        {
+
+            //Create an HTTP client object
+            Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+            String baseAPIUrl2 = "http://iotregistapi.azurewebsites.net/";
+            EventList e;
+
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                Debug.WriteLine("Connect Http Client");
+                client.BaseAddress = new Uri(baseAPIUrl2);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //HttpResponseMessage response = await client.GetAsync(baseAPIUrl + "api/Users/");
+                HttpResponseMessage response = await client.GetAsync(baseAPIUrl2 + "api/Event/");
+                Debug.WriteLine(response);
+                string httpResponseBody = "";
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine("Response Success!!!");
+                    httpResponseBody = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(httpResponseBody.ToString());
+                    if (httpResponseBody.ToString() != "[]")
+                    {
+
+                        e = DataHelper.GetEvents(httpResponseBody);
+                        if (eventList != null) eventList.Clear();
+                        for (int i = 0; i < e.Count; i++) { 
+
+                            Debug.Write(e[i].EventName);
+                            eventList.Add(e[i].EventId.ToString()+" :  "+ e[i].StartDate.Substring(0,10) + "  " +e[i].EventName);
+                            
+                        }
+                        //httpResponseBody.Replace("[", "").Replace("]", "");
+                        Debug.WriteLine(httpResponseBody);
+                        return e;
+                    }
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        //Control person picture show on the app
         public Windows.ApplicationModel.Contacts.Contact CurrentContact
         {
             get => _currentContact;
@@ -480,6 +612,12 @@ namespace signedUWP
             return contact;
         }
 
+
+        /// <summary>
+        /// Camera Initialize and start capture
+        /// timer tick for count down 3 seconds
+        /// when finish capture upload to azure blob storage
+        /// </summary>
         private async void CameraPictureShowing()
         {
 
@@ -487,6 +625,7 @@ namespace signedUWP
             PopUpWidget2.IsOpen = false;
             await InitializeCameraAsync();
         }
+
         private async Task InitializeCameraAsync()
         {
             if (_mediaCapture == null)
@@ -543,6 +682,7 @@ namespace signedUWP
                 StartCapture();
             }
         }
+
         private async void StartCapture()
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();//引用stopwatch物件
@@ -559,6 +699,150 @@ namespace signedUWP
             count_timer.Start();
         }
 
+        private async Task<int> UploadToAzureStorage(StorageFile file)
+        {
+            try
+            {
+                //  create Azure Storage
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=visitorimageblob;AccountKey=/z6meWEOmL2znURclm+n4q6p2+IQWA0l2EXogWfRCfx/SttPXJkoHrLMI5BQuqGA15VmYQnNwaxx43nZkn0KBQ==;EndpointSuffix=core.windows.net");
+
+                //  create a blob client.
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+                // create storage file in local app storage
+                string time = System.DateTime.Now.ToString("yyyy'-'MM'-'dd", CultureInfo.CurrentUICulture.DateTimeFormat);
+
+                //string myPhotos = Environment.GetFolderPath(Environ
+                string p = System.IO.Path.Combine("picture-" + time);
+
+                //  create a container 
+                CloudBlobContainer container = blobClient.GetContainerReference(p);
+
+                await container.CreateIfNotExistsAsync();
+
+                // Set the permissions so the blobs are public. 
+                BlobContainerPermissions permissions = new BlobContainerPermissions
+                {
+                    PublicAccess = BlobContainerPublicAccessType.Blob
+                };
+                await container.SetPermissionsAsync(permissions);
+                CloudBlockBlob blob = null;
+                string filename = null;
+
+                IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
+                if (null != fileStream)
+                {
+                    filename = file.Name;
+                    blob = container.GetBlockBlobReference(filename);
+                    await blob.DeleteIfExistsAsync();
+                    await blob.UploadFromFileAsync(file);
+                    var blobUrl = blob.Uri.AbsoluteUri;
+
+                    Debug.WriteLine("Upload picture succeed! Filename: " + filename);
+                    Debug.WriteLine("Url : " + blobUrl);
+                    await PostPhotoAsync(blobUrl);
+                }
+                return 1;
+            }
+            catch
+            {
+                //  return error
+                return 0;
+            }
+        }
+
+        private async void timer_TickAsync(object sender, object e)
+        {
+            countdown++;
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/crrect_answer1.mp3"));
+            PopUpWidget3.IsOpen = true;
+            if (countdown == 1)
+            {
+                mediaPlayer.Play();
+                popUpDisplayText3.Text = "3";
+            }
+            if (countdown == 2)
+            {
+
+                mediaPlayer.Play();
+                popUpDisplayText3.Text = "2";
+            }
+            if (countdown == 3)
+            {
+
+                mediaPlayer.Play();
+                popUpDisplayText3.Text = "1";
+
+            }
+            if (countdown == 4)
+            {
+                PopUpWidget3.IsOpen = false;
+                mediaPlayer1 = new MediaPlayer();
+                mediaPlayer1.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/crrect_answer3.mp3"));
+                mediaPlayer1.Play();
+                ImageEncodingProperties imgFormat = ImageEncodingProperties.CreateJpeg();
+
+                // create storage file in local app storage
+                string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
+                //string myPhotos = Environment.GetFolderPath(Environ
+                string p = System.IO.Path.Combine(registerName + "-" + time + ".jpg");
+                // create storage file in local app storage
+                StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(
+                    p,
+                    CreationCollisionOption.GenerateUniqueName);
+                //var appInstalledFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                //Debug.WriteLine(appInstalledFolder.Path);               
+                //var picture = await appInstalledFolder.GetFolderAsync("picture");
+                // var imageFile = await picture.CreateFileAsync(p);
+
+                using (var captureStream = new InMemoryRandomAccessStream())
+                {
+                    await _mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
+
+                    using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        var decoder = await BitmapDecoder.CreateAsync(captureStream);
+                        var encoder = await BitmapEncoder.CreateForTranscodingAsync(fileStream, decoder);
+
+                        var properties = new BitmapPropertySet {
+                     { "System.Photo.Orientation", new BitmapTypedValue(PhotoOrientation.FlipHorizontal, PropertyType.UInt16) }
+                     };
+                        await encoder.BitmapProperties.SetPropertiesAsync(properties);
+
+                        await encoder.FlushAsync();
+                    }
+                }
+                // take 
+                //await _mediaCapture.CapturePhotoToStorageFileAsync(imgFormat, file);
+
+                // Get photo as a BitmapImage
+                Debug.WriteLine(file.Path);
+                userImage = new BitmapImage(new Uri(file.Path));
+                userImagePath = file.Name;
+                userImageFile = file;
+                Debug.WriteLine(userImagePath);
+                // imagePreview is a <Image> object defined in XAML
+                PreviewControl.Visibility = Visibility.Collapsed;
+                imagePreview.Visibility = Visibility.Visible;
+
+
+                popUpDisplayText1.Text = "Save picture if you like it or retake again!    ";
+                popUpDisplayText1.FontSize = 20;
+                appbarButton3.Visibility = Visibility.Visible;
+                appbarButton4.Visibility = Visibility.Visible;
+                //imagePreview.FlowDirection = FlowDirection.RightToLeft;
+                imagePreview.Source = userImage;
+                _mediaCapture = null;
+                count_timer.Stop();
+                //await System.Threading.Tasks.Task.Delay(5000);
+
+            }
+        }
+
+        /// <summary>
+        /// Button control
+        /// </summary>
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             /*System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();//引用stopwatch物件
@@ -606,11 +890,28 @@ namespace signedUWP
         {
             popupAddNewUser.IsOpen = true;
             UserList u = await CountUserList();
-             _VisitorID = u.Last().Id + 1;
+            if (u != null) _VisitorID = u.Last().VisitorId + 1;
+            else _VisitorID = 1;
             inputVisitorId.Text = _VisitorID.ToString();
             Debug.WriteLine("new visitor id:" + _VisitorID.ToString());
         }
+        private async void SelectOldEvent(object sender,RoutedEventArgs e)
+        {
+            //Create dataFile.txt in LocalFolder and write “My text” to it 
+            // Create sample file; replace if exists.
+            StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFile sampleFile = await storageFolder.CreateFileAsync("Eventfile.txt",
+                    Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(sampleFile, _SelectEventId.ToString());
+            popupAddNewEvent.IsOpen = false;
+            var Info = await GetEventById(_SelectEventId.ToString());
+            EventNameText.Text =" "+ Info.EventName;
+        }
 
+        /// <summary>
+        /// PopUp layout control 
+        /// set the layout at center location
+        /// </summary>
         private void OnAddUserLayoutUpdated(object sender, object e)
         {
             if (popupAddNewUserWindow.ActualWidth == 0 && popupAddNewUserWindow.ActualHeight == 0)
@@ -721,12 +1022,14 @@ namespace signedUWP
             }
         }
 
+        /// <summary>
+        /// Add new visitor part
+        /// </summary>
         private void closeNewVistorPopUp()
         {
             popupAddNewUser.IsOpen = false;
             cancelPanel.Foreground = (SolidColorBrush)Resources["grayColor"];
         }
-
 
         /*public async Task RegisterVistor()
         {
@@ -746,25 +1049,27 @@ namespace signedUWP
 
         private async Task<Visitor> createNewVisitorObjectAsync()
         {
+            //Read the first line of dataFile.txt in LocalFolder and store it in a String
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile sampleFile = await localFolder.GetFileAsync("EventFile.txt");
+            String fileContent = await FileIO.ReadTextAsync(sampleFile);
             Visitor vistor = new Visitor();
-            vistor.Id = _VisitorID;
+            vistor.VisitorId = _VisitorID;
             vistor.VisitorName = inputVisitorName.Text;
             vistor.VisitorCompany = inputVisitorCompany.Text;
             vistor.Arrived = "No";
+            vistor.EventId = Int32.Parse(fileContent);
             var httpClient = new HttpClient();
             String baseAPIUrl = "http://iotregistapi.azurewebsites.net/";
             httpClient.BaseAddress = new Uri(baseAPIUrl);
 
-            var json = "{\"Id\":" + vistor.Id + ",\"VisitorName\":\"" + vistor.VisitorName + "\",\"VisitorCompany\":\"" + vistor.VisitorCompany + "\",\"Arrived\":\"" + vistor.Arrived + "\"}";
+            var json = "{\"VisitorId\":\"" + _VisitorID + "\",\"VisitorName\":\"" + vistor.VisitorName + "\",\"VisitorCompany\":\"" + vistor.VisitorCompany + "\",\"Arrived\":\"" + vistor.Arrived + "\",\"EventId\":\"" + vistor.EventId + "\"}";
             Debug.WriteLine(json);
             StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
             var result = httpClient.PostAsync(baseAPIUrl + "api/Users", content).Result;
 
             return vistor;
         }
-
-
-
 
         private async void registerNewVistor(object sender, RoutedEventArgs e)
         {
@@ -799,6 +1104,134 @@ namespace signedUWP
             cancelPanel.Foreground = (SolidColorBrush)Resources["grayColor"];
         }
 
+        private void cancelPanel1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            popupAddNewEvent.IsOpen = false;
+            cancelPanel1.Foreground = (SolidColorBrush)Resources["grayColor"];
+        }
+
+        private void cancelPanel1_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            cancelPanel1.Foreground = (SolidColorBrush)Resources["warningColor"];
+        }
+
+        private void cancelPanel1_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            cancelPanel1.Foreground = (SolidColorBrush)Resources["grayColor"];
+        }
+
+        private void addPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            eventList.Clear();
+            popupAddNewEvent.IsOpen = true;
+            GetEventList();
+        }
+
+        private void addPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AddPanel.Foreground = (SolidColorBrush)Resources["CloudColor"];
+        }
+
+        private void addPanel_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AddPanel.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
+        }
+
+
+        private async Task<Events> createNewEventObjectAsync()
+        {
+            EventList e = await GetEventList();
+            if (e != null) _EventID = e.First().EventId + 1;
+
+            else _EventID = 1;
+           // Debug.WriteLine("Old event id:" + e.First().EventId);
+            Debug.WriteLine("new event id:" + _EventID.ToString());
+
+            Events EV = new Events();
+            EV.EventName = inputEventName.Text;
+            EV.EventType = _EventType;
+
+            var sdate = StartDate.Date;
+            DateTime stime = sdate.Value.DateTime;
+            EV.StartDate = stime.ToString("MM-dd-yyyy");
+
+            EV.StartTime = StartTime.Time.ToString();
+
+            var edate = EndDate.Date;
+            DateTime etime = edate.Value.DateTime;
+            EV.EndDate = etime.ToString("MM-dd-yyyy");
+
+            EV.EndTime = EndTime.Time.ToString();
+            Debug.WriteLine("");
+            var httpClient = new HttpClient();
+            String baseAPIUrl = "http://iotregistapi.azurewebsites.net/";
+            httpClient.BaseAddress = new Uri(baseAPIUrl);
+
+            var json = "{\"EventId\":" + _EventID + ",\"EventName\":\"" + EV.EventName + "\",\"EventType\":\"" + EV.EventType + "\",\"StartDate\":\"" + EV.StartDate + "\",\"StartTime\":\"" + EV.StartTime + "\",\"EndDate\":\"" + EV.EndDate + "\",\"EndTime\":\"" + EV.EndTime + "\"}";
+            Debug.WriteLine(json);
+            StringContent content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
+            var result = httpClient.PostAsync(baseAPIUrl + "api/Event", content).Result;
+
+            return EV;
+        }
+
+        private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PivotItem item = (sender as Pivot).ContainerFromItem((sender as Pivot).SelectedItem) as PivotItem;
+            Debug.WriteLine(item);
+            GetEventList();
+
+        }
+        private void combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+            Debug.WriteLine(cmbSelect.SelectedItem.ToString());
+            HandleAsync();
+        }
+        private async Task HandleAsync()
+        {
+            _SelectEventId = cmbSelect.SelectedItem.ToString().Split(new string[] { " : " }, StringSplitOptions.None).First();
+
+
+            Debug.WriteLine("Store to localfile........" + _SelectEventId.ToString());
+        }
+        private async void AddNewEvent(object sender,  RoutedEventArgs e)
+        {
+            Events ev = await createNewEventObjectAsync();
+
+            popupAddNewEvent.IsOpen = false;
+        }
+
+        private void Autosuggestcontrol_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            var Auto = (AutoSuggestBox)sender;
+            var Suggestion = Autoitems.Where(p => p.StartsWith(Auto.Text, StringComparison.OrdinalIgnoreCase)).ToArray();
+            Auto.ItemsSource = Suggestion;
+            _EventType = Auto.Text;
+        }
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            // Set sender.Text. You can use args.SelectedItem to build your text string.
+            var Auto = (AutoSuggestBox)sender;
+            _EventType = Auto.Text;
+        }
+
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            if (args.ChosenSuggestion != null)
+            {
+                // User selected an item from the suggestion list, take an action on it here.
+            }
+            else
+            {
+                // Use args.QueryText to determine what to do.
+            }
+        }
+        /// <summary>
+        /// control the change of delay time for complete state, can change to 5/10/15 seconds
+        /// </summary>
         private async void timechangeMessageShowing(int seconds)
         {
 
@@ -808,6 +1241,7 @@ namespace signedUWP
             await System.Threading.Tasks.Task.Delay(3000);
             PopUpWidget.IsOpen = false;
         }
+
         private void timerChangeI(object sender, TappedRoutedEventArgs e)
         {
             timerO.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
@@ -817,6 +1251,7 @@ namespace signedUWP
 
             timechangeMessageShowing(5);
         }
+
         private void timerChangeO(object sender, TappedRoutedEventArgs e)
         {
             timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
@@ -826,6 +1261,7 @@ namespace signedUWP
 
             timechangeMessageShowing(10);
         }
+
         private void timerChangeT(object sender, TappedRoutedEventArgs e)
         {
             timerI.Foreground = (SolidColorBrush)Resources["defaultTimerColor"];
@@ -835,126 +1271,10 @@ namespace signedUWP
 
             timechangeMessageShowing(15);
         }
-        private async void BackToDefaultStep()
-        {
-            step1Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step1Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Barcode;
-            step1ColorStoryboard.Begin();
 
-            step2Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step2Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.Tags;
-            step2ColorStoryboard.Stop();
-
-            step3Circle.Fill = (SolidColorBrush)Resources["defaultStepBackground"];
-            step3Icon.Icon = FontAwesome.UWP.FontAwesomeIcon.ThumbsUp;
-            step3ColorStoryboard.Stop();
-
-
-            registerNo.Text = String.Empty;
-            registerNo.Visibility = Visibility.Visible;
-            registerNoText.Text = String.Empty;
-            registerNoText.Visibility = Visibility.Collapsed;
-
-            displayName.Text = "-";
-
-            regiserUwbId.Text = String.Empty;
-            regiserUwbId.Visibility = Visibility.Collapsed;
-            regiserUwbIdText.Text = String.Empty;
-            regiserUwbIdText.Visibility = Visibility.Collapsed;
-
-            PopUpWidget.IsOpen = false;
-            CurrentContact = await CreateDefaultContact();
-            registerNo.Focus(FocusState.Programmatic);
-        }
-        private async void timer_TickAsync(object sender, object e)
-        {
-            countdown++;
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/crrect_answer1.mp3"));
-            PopUpWidget3.IsOpen = true;
-            if (countdown == 1)
-            {
-                mediaPlayer.Play();
-                popUpDisplayText3.Text = "3";
-            }
-            if (countdown == 2)
-            {
-
-                mediaPlayer.Play();
-                popUpDisplayText3.Text = "2";
-            }
-            if (countdown == 3)
-            {
-
-                mediaPlayer.Play();
-                popUpDisplayText3.Text = "1";
-
-            }
-            if (countdown == 4)
-            {
-                PopUpWidget3.IsOpen = false;
-                mediaPlayer1 = new MediaPlayer();
-                mediaPlayer1.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/crrect_answer3.mp3"));
-                mediaPlayer1.Play();
-                ImageEncodingProperties imgFormat = ImageEncodingProperties.CreateJpeg();
-
-                // create storage file in local app storage
-                string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
-                //string myPhotos = Environment.GetFolderPath(Environ
-                string p = System.IO.Path.Combine( registerName + "-" + time + ".jpg");
-                // create storage file in local app storage
-                StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(
-                    p,
-                    CreationCollisionOption.GenerateUniqueName);
-                //var appInstalledFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-                //Debug.WriteLine(appInstalledFolder.Path);               
-                //var picture = await appInstalledFolder.GetFolderAsync("picture");
-                // var imageFile = await picture.CreateFileAsync(p);
-
-                using (var captureStream = new InMemoryRandomAccessStream())
-                {
-                    await _mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
-
-                    using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                    {
-                        var decoder = await BitmapDecoder.CreateAsync(captureStream);
-                        var encoder = await BitmapEncoder.CreateForTranscodingAsync(fileStream, decoder);
-
-                        var properties = new BitmapPropertySet {
-                     { "System.Photo.Orientation", new BitmapTypedValue(PhotoOrientation.FlipHorizontal, PropertyType.UInt16) }
-                     };
-                        await encoder.BitmapProperties.SetPropertiesAsync(properties);
-
-                        await encoder.FlushAsync();
-                    }
-                }
-                // take 
-                //await _mediaCapture.CapturePhotoToStorageFileAsync(imgFormat, file);
-
-                // Get photo as a BitmapImage
-                Debug.WriteLine(file.Path);
-                userImage = new BitmapImage(new Uri(file.Path));
-                userImagePath = file.Name;
-                userImageFile = file;
-                Debug.WriteLine(userImagePath);
-                // imagePreview is a <Image> object defined in XAML
-                PreviewControl.Visibility = Visibility.Collapsed;
-                imagePreview.Visibility = Visibility.Visible;
-
-                
-                popUpDisplayText1.Text = "Save picture if you like it or retake again!    ";
-                popUpDisplayText1.FontSize = 20;
-                appbarButton3.Visibility = Visibility.Visible;
-                appbarButton4.Visibility = Visibility.Visible;
-                //imagePreview.FlowDirection = FlowDirection.RightToLeft;
-                imagePreview.Source = userImage;
-                _mediaCapture = null;
-                count_timer.Stop();
-                //await System.Threading.Tasks.Task.Delay(5000);
-
-            }
-        }
-
+        /// <summary>
+        /// control the camera frame invert , flip to the mirror image
+        /// </summary>
         private async Task SetPreviewRotationAsync()
         {
             if (!_externalCamera)
@@ -984,60 +1304,6 @@ namespace signedUWP
                 //CapturePhotoButton.RenderTransform = transform;
             });
         }
-
-        private async Task<int> UploadToAzureStorage(StorageFile file)
-        {
-            try
-            {
-                //  create Azure Storage
-                CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=visitorimageblob;AccountKey=/z6meWEOmL2znURclm+n4q6p2+IQWA0l2EXogWfRCfx/SttPXJkoHrLMI5BQuqGA15VmYQnNwaxx43nZkn0KBQ==;EndpointSuffix=core.windows.net");
-
-                //  create a blob client.
-                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-
-                // create storage file in local app storage
-                string time = System.DateTime.Now.ToString("yyyy'-'MM'-'dd", CultureInfo.CurrentUICulture.DateTimeFormat);
-                
-                //string myPhotos = Environment.GetFolderPath(Environ
-                string p = System.IO.Path.Combine("picture-" + time);
-               
-                //  create a container 
-                CloudBlobContainer container = blobClient.GetContainerReference(p);
-
-                await container.CreateIfNotExistsAsync();
-
-                // Set the permissions so the blobs are public. 
-                BlobContainerPermissions permissions = new BlobContainerPermissions
-                {
-                    PublicAccess = BlobContainerPublicAccessType.Blob
-                };
-                await container.SetPermissionsAsync(permissions);
-                CloudBlockBlob blob = null;
-                string filename = null;
-               
-                IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
-                if (null != fileStream)
-                {
-                        filename = file.Name;
-                        blob = container.GetBlockBlobReference(filename);
-                        await blob.DeleteIfExistsAsync();
-                        await blob.UploadFromFileAsync(file);
-                        var blobUrl = blob.Uri.AbsoluteUri;
-                        
-                        Debug.WriteLine("Upload picture succeed! Filename: " + filename);
-                        Debug.WriteLine("Url : " + blobUrl);
-                        await PostPhotoAsync(blobUrl);
-                }
-                return 1;               
-            }
-            catch
-            {
-                //  return error
-                return 0;
-            }
-        }
-
-
 
     }
 
